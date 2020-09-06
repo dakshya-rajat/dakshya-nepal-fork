@@ -1,7 +1,5 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<h1 align="center">
-  Dakshya Online Frontend
-</h1>
+
+#  Dakshya Online Frontend
 
 This is a frontend of dakshya online website. It is based on gatsby js and grommet.
 
