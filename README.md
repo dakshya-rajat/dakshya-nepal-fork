@@ -1,5 +1,5 @@
 
-#  Dakshya Online Frontend
+#  Dakshya Nepal Frontend
 
 This is a frontend of dakshya online website. It is based on gatsby js and grommet.
 
@@ -19,7 +19,7 @@ This is a frontend of dakshya online website. It is based on gatsby js and gromm
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `dakshya-online` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `dakshya-nepal` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
