@@ -9,6 +9,7 @@ export default props => {
       elevation="none"
       pad={props.p24 ? "large" : "medium"}
       round="xsmall"
+      {...props}
     >
       {props.children}
     </Card>
