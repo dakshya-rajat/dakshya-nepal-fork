@@ -149,6 +149,13 @@ export default {
         radius: "4px",
       },
     },
+    // add global shadow styles according to design specification
+    elevation: {
+      light: {
+        d1: "0px 1px 12px rgba(0, 0, 0, 0.08)",
+        header: "0px 2px 15px rgba(0, 0, 0, 0.03)",
+      },
+    },
   },
   chart: {},
   diagram: {
