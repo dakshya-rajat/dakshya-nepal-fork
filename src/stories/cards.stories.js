@@ -16,3 +16,18 @@ export const cardsWithPadding = () => {
     </>
   )
 }
+
+export const cardWithShadow = () => {
+  return (
+    <>
+      <Card elevation="d1">
+        This card has a d1 shadow type according to the design
+      </Card>
+      <br />
+      <br />
+      <Card elevation="header">
+        This card has a header shadow type according to the design
+      </Card>
+    </>
+  )
+}
