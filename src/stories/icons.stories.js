@@ -2,6 +2,7 @@ import React from "react"
 import { Avatar, Box } from "grommet"
 import ArrowLeft from "../components/icons/arrow-left"
 import ArrowRight from "../components/icons/arrow-right"
+import Call from "../components/icons/call"
 
 export default {
   title: "Design/Icons",
@@ -26,6 +27,12 @@ export const controlIconList = () => {
             <ArrowRight />
           </Avatar>
           <pre>arrow-right</pre>
+        </Box>
+        <Box direction="column">
+          <Avatar alignSelf="center">
+            <Call />
+          </Avatar>
+          <pre>call</pre>
         </Box>
       </Box>
     </div>
