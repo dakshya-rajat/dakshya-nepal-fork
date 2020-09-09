@@ -3,6 +3,7 @@ import { Avatar, Box } from "grommet"
 import ArrowLeft from "../components/icons/arrow-left"
 import ArrowRight from "../components/icons/arrow-right"
 import Call from "../components/icons/call"
+import ChevronDown from "../components/icons/chevron-down"
 
 export default {
   title: "Design/Icons",
@@ -33,6 +34,12 @@ export const controlIconList = () => {
             <Call />
           </Avatar>
           <pre>call</pre>
+        </Box>
+        <Box direction="column">
+          <Avatar alignSelf="center">
+            <ChevronDown />
+          </Avatar>
+          <pre>chevron-down</pre>
         </Box>
       </Box>
     </div>
