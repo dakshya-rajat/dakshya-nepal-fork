@@ -6,7 +6,7 @@ import image2 from "../images/illustrations/guidance form.svg"
 import image3 from "../images/illustrations/Online classes.svg"
 
 export default {
-  title: "Design/Illustrations",
+  title: "Design/Graphics",
 }
 
 export const sampleIllustration = () => {

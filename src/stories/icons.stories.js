@@ -25,7 +25,7 @@ import Domain from "../images/icons/Domain.svg"
 import Globe from "../images/icons/Globe.svg"
 
 export default {
-  title: "Design/Icons",
+  title: "Design/Graphics",
 }
 
 export const controlIconList = () => {
