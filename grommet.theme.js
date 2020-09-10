@@ -172,6 +172,15 @@ export default {
     border: {
       radius: "4px",
     },
+    disabled: {
+      border: {
+        color: "g1",
+      },
+      color: "g1",
+      background: {
+        color: "w2",
+      },
+    },
   },
   checkBox: {
     check: {
