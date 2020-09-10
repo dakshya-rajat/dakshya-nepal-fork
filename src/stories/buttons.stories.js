@@ -10,12 +10,8 @@ export default {
 export const buttons = () => {
   return (
     <Box direction="row" gap="medium">
-      <Button primary label={<Text code="button">Primary Button</Text>} />
-      <Button
-        primary
-        disabled
-        label={<Text code="button">Primary Button</Text>}
-      />
+      <Button primary label={<Text code="button">Primary</Text>} />
+      <Button primary disabled label={<Text code="button">Primary</Text>} />
     </Box>
   )
 }
