@@ -156,6 +156,12 @@ export default {
         header: "0px 2px 15px rgba(0, 0, 0, 0.03)",
       },
     },
+    //add custom focus colors to the links to match the design
+    focus: {
+      border: {
+        color: "h1",
+      },
+    },
   },
   chart: {},
   diagram: {
