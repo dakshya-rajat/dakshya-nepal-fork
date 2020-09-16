@@ -14,6 +14,10 @@ export const buttons = () => {
         <Button label="ghost" />
         <Button disabled label="ghost" />
       </Box>
+      <Box direction="row" gap="medium">
+        <Button ka label="क" />
+        <Button ka disabled label="क" />
+      </Box>
     </Box>
   )
 }
