@@ -12,12 +12,5 @@ export default props => {
     props = { ...props, size: "medium", weight: 700 }
   else if (props.code === "button")
     props = { ...props, size: "medium", weight: 700 }
-  return (
-    <Text
-      {...props}
-      style={props.code === "button" ? { textTransform: "capitalize" } : null}
-    >
-      {props.children}
-    </Text>
-  )
+  return <Text {...props}>{props.children}</Text>
 }
