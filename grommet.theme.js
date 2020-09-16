@@ -167,12 +167,18 @@ export default {
     border: {
       radius: "4px",
     },
-    disabled: {
-      border: {
-        color: "g1",
+    default: {
+      color: "b2",
+    },
+    hover: {
+      default: {
+        color: "b1",
+        background: { color: "p1-l" },
       },
-      color: "g1",
-      background: {
+    },
+    disabled: {
+      opacity: 1,
+      default: {
         color: "w2",
       },
     },
