@@ -9,9 +9,11 @@ export default {
 
 export const buttons = () => {
   return (
-    <Box direction="row" gap="medium">
-      <Button primary label={<Text code="button">Primary</Text>} />
-      <Button primary disabled label={<Text code="button">Primary</Text>} />
+    <Box direction="column" gap="medium">
+      <Box direction="row" gap="medium">
+        <Button label="ghost" />
+        <Button disabled label="ghost" />
+      </Box>
     </Box>
   )
 }
