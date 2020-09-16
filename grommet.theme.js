@@ -182,6 +182,24 @@ export default {
         color: "w2",
       },
     },
+    extend: props => {
+      let extraStyles = ""
+      if (props.ka) {
+        extraStyles += `
+          padding: 11px 8px;
+        `
+      }
+      if (props.ka && props.disabled) {
+        extraStyles += `
+            background: #EAEAEA;
+            color: #C2C2C2
+          `
+      }
+      return `
+          text-transform: capitalize;
+          ${extraStyles}
+        `
+    },
   },
   checkBox: {
     check: {
