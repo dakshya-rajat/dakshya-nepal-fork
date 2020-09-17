@@ -180,6 +180,7 @@ export default {
       background: { color: "b1" },
     },
     secondary: {
+      color: "b1",
       border: { color: "b1", width: "3px" },
     },
     hover: {
