@@ -179,6 +179,11 @@ export default {
         color: "b1",
         background: { color: "p1-l" },
       },
+      primary: {
+        extend: props => {
+          return `box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.08);`
+        },
+      },
     },
     disabled: {
       opacity: 1,
