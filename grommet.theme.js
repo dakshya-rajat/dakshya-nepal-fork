@@ -179,6 +179,9 @@ export default {
       color: "w1",
       background: { color: "b1" },
     },
+    secondary: {
+      border: { color: "b1", width: "3px" },
+    },
     hover: {
       default: {
         color: "b1",
@@ -189,15 +192,22 @@ export default {
           return `box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.08);`
         },
       },
+      secondary: {
+        background: { color: "b1" },
+      },
     },
     disabled: {
       opacity: 1,
       default: {
-        color: "w2",
+        color: "g1",
       },
       primary: {
         color: "g1",
         background: { color: "w2" },
+      },
+      secondary: {
+        color: "g1",
+        border: { color: "w2" },
       },
     },
     extend: props => {
