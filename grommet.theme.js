@@ -216,6 +216,7 @@ export default {
       return `
           text-transform: capitalize;
           ${extraStyles}
+          :focus {border-color: #2F80ED;}
         `
     },
   },
