@@ -25,6 +25,11 @@ export const buttons = () => {
         <Button primary label="primary" />
         <Button primary disabled label="disabled" />
       </Box>
+      <Box direction="row" gap="medium">
+        <Text color="h1">Secondary Button</Text>
+        <Button secondary label="secondary" />
+        <Button secondary focusIndicator={false} disabled label="disabled" />
+      </Box>
     </Box>
   )
 }
