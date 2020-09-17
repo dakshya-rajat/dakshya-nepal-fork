@@ -174,14 +174,27 @@ export default {
     },
     default: {
       color: "b2",
+      padding: {
+        horizontal: "8px",
+        vertical: "4px",
+      },
     },
     primary: {
       color: "w1",
       background: { color: "b1" },
+      border: { width: "3px", color: "b1" },
+      padding: {
+        horizontal: "13px",
+        vertical: "9px",
+      },
     },
     secondary: {
       color: "b1",
       border: { color: "b1", width: "3px" },
+      padding: {
+        horizontal: "13px",
+        vertical: "9px",
+      },
     },
     hover: {
       default: {
