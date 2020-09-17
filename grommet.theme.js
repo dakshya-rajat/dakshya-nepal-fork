@@ -174,6 +174,10 @@ export default {
     },
     default: {
       color: "b2",
+      border: {
+        color: "w1",
+        width: "3px",
+      },
       padding: {
         horizontal: "8px",
         vertical: "4px",
