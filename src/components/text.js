@@ -11,6 +11,6 @@ export default props => {
   else if (props.code === "label")
     props = { ...props, size: "medium", weight: 700 }
   else if (props.code === "button")
-    props = { ...props, size: "medium", weight: 700 }
+    props = { ...props, size: "16px", weight: 700 }
   return <Text {...props}>{props.children}</Text>
 }
