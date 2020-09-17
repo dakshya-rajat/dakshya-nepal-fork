@@ -13,13 +13,13 @@ export default props => {
       >
         <path
           d="M20 4L4 20"
-          stroke="black"
+          stroke="inherit"
           stroke-width="2"
           stroke-linecap="square"
         />
         <path
           d="M4 4L20 20"
-          stroke="black"
+          stroke="inherit"
           stroke-width="2"
           stroke-linecap="square"
         />

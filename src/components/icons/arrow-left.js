@@ -13,11 +13,11 @@ export default props => {
       >
         <path
           d="M21 12L4 12"
-          stroke="black"
+          stroke="inherit"
           stroke-width="2"
           stroke-linejoin="round"
         />
-        <path d="M10 5L4 12L10 19" stroke="black" stroke-width="2" />
+        <path d="M10 5L4 12L10 19" stroke="inherit" stroke-width="2" />
       </svg>
     </Blank>
   )

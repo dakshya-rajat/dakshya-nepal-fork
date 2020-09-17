@@ -156,6 +156,12 @@ export default {
         header: "0px 2px 15px rgba(0, 0, 0, 0.03)",
       },
     },
+    //add focus styles to the theme
+    focus: {
+      shadow: undefined,
+      border: undefined,
+      outline: { size: "0px" },
+    },
   },
   chart: {},
   diagram: {
@@ -165,6 +171,82 @@ export default {
   button: {
     border: {
       radius: "4px",
+    },
+    default: {
+      color: "b2",
+      border: {
+        color: "w1",
+        width: "3px",
+      },
+      padding: {
+        horizontal: "8px",
+        vertical: "4px",
+      },
+    },
+    primary: {
+      color: "w1",
+      background: { color: "b1" },
+      border: { width: "3px", color: "b1" },
+      padding: {
+        horizontal: "13px",
+        vertical: "9px",
+      },
+    },
+    secondary: {
+      color: "b1",
+      border: { color: "b1", width: "3px" },
+      padding: {
+        horizontal: "13px",
+        vertical: "9px",
+      },
+    },
+    hover: {
+      default: {
+        color: "b1",
+        background: { color: "p1-l" },
+      },
+      primary: {
+        extend: props => {
+          return `box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.08);`
+        },
+      },
+      secondary: {
+        background: { color: "b1" },
+      },
+    },
+    disabled: {
+      opacity: 1,
+      default: {
+        color: "g1",
+      },
+      primary: {
+        color: "g1",
+        background: { color: "w2" },
+        border: { color: "w2" },
+      },
+      secondary: {
+        color: "g1",
+        border: { color: "w2" },
+      },
+    },
+    extend: props => {
+      let extraStyles = ""
+      if (props.ka) {
+        extraStyles += `
+          padding: 11px 8px;
+        `
+      }
+      if (props.ka && props.disabled) {
+        extraStyles += `
+          background: #EAEAEA;
+          color: #C2C2C2
+        `
+      }
+      return `
+        ${extraStyles}
+        text-transform: capitalize;
+        :focus {border-color: #2F80ED;}
+      `
     },
   },
   checkBox: {
