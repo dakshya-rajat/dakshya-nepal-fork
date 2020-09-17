@@ -20,6 +20,11 @@ export const buttons = () => {
         <Button ka label="क" />
         <Button ka disabled label="क" />
       </Box>
+      <Box direction="row" gap="medium">
+        <Text color="h1">Primary Button</Text>
+        <Button primary label="primary" />
+        <Button primary disabled label="disabled" />
+      </Box>
     </Box>
   )
 }
