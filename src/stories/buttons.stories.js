@@ -1,7 +1,8 @@
 import React from "react"
-import Button from "../components/button"
+import Button, { IconButton } from "../components/button"
 import Text from "../components/text"
 import { Box } from "grommet"
+import User from "../components/icons/user"
 
 export default {
   title: "Design/Controls",
@@ -28,7 +29,12 @@ export const buttons = () => {
       <Box direction="row" gap="medium">
         <Text color="h1">Secondary Button</Text>
         <Button secondary label="secondary" />
-        <Button secondary focusIndicator={false} disabled label="disabled" />
+        <Button secondary disabled label="disabled" />
+      </Box>
+      <Box direction="row" gap="medium">
+        <Text color="h1">Icon Button</Text>
+        <IconButton icon={<User />} />
+        <IconButton icon={<User />} disabled />
       </Box>
     </Box>
   )
