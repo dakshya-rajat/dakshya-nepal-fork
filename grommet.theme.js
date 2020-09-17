@@ -170,6 +170,10 @@ export default {
     default: {
       color: "b2",
     },
+    primary: {
+      color: "w1",
+      background: { color: "b1" },
+    },
     hover: {
       default: {
         color: "b1",
