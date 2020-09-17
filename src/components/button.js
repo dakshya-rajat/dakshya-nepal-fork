@@ -14,3 +14,14 @@ export default props => {
     />
   )
 }
+export const IconButton = props => {
+  return (
+    <Button
+      icon={props.icon}
+      secondary
+      style={{ padding: "12px" }}
+      disabled={props.disabled}
+      ka={props.disabled}
+    />
+  )
+}
