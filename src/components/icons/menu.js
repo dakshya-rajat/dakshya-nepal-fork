@@ -11,9 +11,9 @@ export default props => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M3 12H21" stroke="black" stroke-width="2" />
-        <path d="M3 6H21" stroke="black" stroke-width="2" />
-        <path d="M3 18H21" stroke="black" stroke-width="2" />
+        <path d="M3 12H21" stroke="inherit" stroke-width="2" />
+        <path d="M3 6H21" stroke="inherit" stroke-width="2" />
+        <path d="M3 18H21" stroke="inherit" stroke-width="2" />
       </svg>
     </Blank>
   )
