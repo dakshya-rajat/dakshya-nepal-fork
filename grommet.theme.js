@@ -190,6 +190,10 @@ export default {
       default: {
         color: "w2",
       },
+      primary: {
+        color: "g1",
+        background: { color: "w2" },
+      },
     },
     extend: props => {
       let extraStyles = ""
