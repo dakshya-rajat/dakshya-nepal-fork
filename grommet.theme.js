@@ -218,6 +218,7 @@ export default {
       primary: {
         color: "g1",
         background: { color: "w2" },
+        border: { color: "w2" },
       },
       secondary: {
         color: "g1",
