@@ -238,15 +238,15 @@ export default {
       }
       if (props.ka && props.disabled) {
         extraStyles += `
-            background: #EAEAEA;
-            color: #C2C2C2
-          `
+          background: #EAEAEA;
+          color: #C2C2C2
+        `
       }
       return `
-          text-transform: capitalize;
-          ${extraStyles}
-          :focus {border-color: #2F80ED;}
-        `
+        ${extraStyles}
+        text-transform: capitalize;
+        :focus {border-color: #2F80ED;}
+      `
     },
   },
   checkBox: {
