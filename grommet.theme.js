@@ -45,7 +45,6 @@ export default {
         dark: "#444444",
         light: "w2",
       },
-      focus: "h1",
       control: "b1",
       "active-background": "background-contrast",
       "active-text": "text-strong",
@@ -156,6 +155,12 @@ export default {
         d1: "0px 1px 12px rgba(0, 0, 0, 0.08)",
         header: "0px 2px 15px rgba(0, 0, 0, 0.03)",
       },
+    },
+    //add focus styles to the theme
+    focus: {
+      shadow: undefined,
+      border: undefined,
+      outline: { size: "0px" },
     },
   },
   chart: {},
