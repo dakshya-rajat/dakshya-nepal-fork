@@ -8,6 +8,7 @@ export default props => {
         placeholder={props.placeholder}
         size="small"
         icon={props.icon}
+        disabled={props.disabled}
       />
     </FormField>
   )
