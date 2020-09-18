@@ -162,6 +162,17 @@ export default {
       border: undefined,
       outline: { size: "0px" },
     },
+    input: {
+      font: {
+        weight: 400,
+        height: "24px",
+      },
+      extend: props => {
+        return `
+          font-size: "14px"
+        `
+      },
+    },
   },
   chart: {},
   diagram: {
@@ -263,66 +274,35 @@ export default {
     },
   },
   formField: {
+    round: "4px",
     border: {
       color: "w2",
       error: {
         color: {
-          dark: "white",
-          light: "status-critical",
+          light: "s2",
         },
       },
       position: "inner",
       side: "all",
       style: "solid",
-    },
-    content: {
-      pad: "small",
-    },
-    disabled: {
-      background: {
-        color: "status-disabled",
-        opacity: "medium",
-      },
-    },
-    error: {
-      color: "status-critical",
-      margin: {
-        vertical: "xsmall",
-        horizontal: "small",
-      },
-      background: {
-        color: "s2",
-        opacity: "weak",
-      },
-    },
-    help: {
-      color: "dark-3",
-      margin: {
-        start: "small",
-      },
-    },
-    info: {
-      color: "text-xweak",
-      margin: {
-        vertical: "xsmall",
-        horizontal: "small",
-      },
+      size: "2px",
     },
     label: {
-      margin: {
-        vertical: "xsmall",
-        horizontal: "small",
-      },
+      size: "14px",
+      margin: { vertical: "8px", horizontal: undefined },
     },
-    margin: {
-      bottom: "small",
+    error: {
+      background: { color: "s2-l" },
+      size: "14px",
+      margin: { vertical: "8px", horizontal: undefined },
     },
-    round: "4px",
-  },
-  layer: {
-    background: {
-      dark: "#111111",
-      light: "#FFFFFF",
+    info: {
+      color: "b2",
+      size: "14px",
+      margin: { vertical: "8px", horizontal: undefined },
+    },
+    focus: {
+      border: { color: "h1" },
     },
   },
   //adding heading properties according to the design
