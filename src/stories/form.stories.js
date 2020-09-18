@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "grommet"
+import { Box, Text } from "grommet"
 import FormField from "../components/formField"
 
 export default {
@@ -20,6 +20,21 @@ export const formField = () => {
         placeholder="+91223565875"
         info="May be you need a hand"
       />
+    </Box>
+  )
+}
+
+export const formItems = () => {
+  const [value, setValue] = React.useState("")
+
+  const onChange = event => setValue(event.target.value)
+  return (
+    <Box direction="column" gap="medium">
+      <Box direction="row" gap="medium">
+        <Text color="h1">Normal</Text>
+        <FormField placeholder="Name" />
+        <FormField placeholder="Disabled" disabled />
+      </Box>
     </Box>
   )
 }
