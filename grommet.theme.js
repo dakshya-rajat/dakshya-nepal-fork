@@ -228,7 +228,7 @@ export default {
     disabled: {
       opacity: 1,
       default: {
-        color: "g1",
+        color: "w2",
       },
       primary: {
         color: "g1",
