@@ -240,6 +240,11 @@ export default {
         border: { color: "w2" },
       },
     },
+    active: {
+      default: {
+        background: { color: "p1-l" },
+      },
+    },
     extend: props => {
       let extraStyles = ""
       if (props.ka) {
