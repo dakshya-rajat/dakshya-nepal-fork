@@ -14,6 +14,7 @@ export const buttons = () => {
       <Box direction="row" gap="medium">
         <Text color="h1">Default Button</Text>
         <Button label="ghost" />
+        <Button active label="active" />
         <Button disabled label="ghost" />
       </Box>
       <Box direction="row" gap="medium">
