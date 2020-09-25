@@ -6,6 +6,8 @@ import Text from "../../components/text"
 import MenuIcon from "../../components/icons/menu"
 import Exit from "../../components/icons/exit"
 import LogoHorizontal from "../../images/logo-horizontal.svg"
+import { Link } from "gatsby"
+import { hrefTo } from "@storybook/addon-links"
 
 export default ({ active }) => {
   const size = React.useContext(ResponsiveContext)
@@ -21,9 +23,9 @@ export default ({ active }) => {
         }
         elevation="header"
       >
-        <a href="/">
+        <Link to="/">
           <Image src={LogoHorizontal} label="Dakshya Nepal" />
-        </a>
+        </Link>
         <ResponsiveContext.Consumer>
           {size =>
             size === "small" ? (
@@ -32,7 +34,13 @@ export default ({ active }) => {
               </Box>
             ) : (
               <Box justify="end" direction="row" gap="medium">
-                <Button label="Products" active={active === "products"} />
+                <Link to="/products" style={{ margin: "auto 0" }}>
+                  <Button
+                    as="div"
+                    label="Products"
+                    active={active === "products"}
+                  />
+                </Link>
                 <Button label="Blogs" active={active === "blogs"} />
                 <Button label="About" active={active === "about"} />
                 <Button label="Careers" active={active === "careers"} />
@@ -53,9 +61,9 @@ export default ({ active }) => {
             }
             elevation="header"
           >
-            <a href="/">
+            <Link to="/">
               <Image src={LogoHorizontal} label="Dakshya Nepal" />
-            </a>
+            </Link>
             <Box justify="end" onClick={() => setShowLayer(false)}>
               <Exit />
             </Box>
@@ -73,15 +81,15 @@ export default ({ active }) => {
               pad={{ vertical: "small", horizontal: "none" }}
             >
               {(datum, index) => (
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   style={{ color: "inherit", textDecoration: "none" }}
                   key={index}
                 >
                   <Text code="body" style={{ lineHeight: "32px" }}>
                     {datum}
                   </Text>
-                </a>
+                </Link>
               )}
             </List>
           </Box>
