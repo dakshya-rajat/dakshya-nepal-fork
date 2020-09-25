@@ -7,7 +7,7 @@ import MenuIcon from "../../components/icons/menu"
 import Exit from "../../components/icons/exit"
 import LogoHorizontal from "../../images/logo-horizontal.svg"
 
-export default props => {
+export default ({ active }) => {
   const size = React.useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = React.useState(false)
   const locations = ["Products", "Blogs", "About", "Careers", "Language: क"]
@@ -32,10 +32,10 @@ export default props => {
               </Box>
             ) : (
               <Box justify="end" direction="row" gap="medium">
-                <Button label="Products" />
-                <Button label="Blogs" />
-                <Button label="About" />
-                <Button label="Careers" />
+                <Button label="Products" active={active === "products"} />
+                <Button label="Blogs" active={active === "blogs"} />
+                <Button label="About" active={active === "about"} />
+                <Button label="Careers" active={active === "careers"} />
                 <Button ka label="क" />
               </Box>
             )
