@@ -228,7 +228,7 @@ export default {
     disabled: {
       opacity: 1,
       default: {
-        color: "g1",
+        color: "w2",
       },
       primary: {
         color: "g1",
@@ -238,6 +238,11 @@ export default {
       secondary: {
         color: "g1",
         border: { color: "w2" },
+      },
+    },
+    active: {
+      default: {
+        background: { color: "p1-l" },
       },
     },
     extend: props => {
