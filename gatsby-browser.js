@@ -8,6 +8,7 @@
 import React from "react"
 import { Grommet } from "grommet"
 import dakshyaTheme from "./grommet.theme"
+import "./src/styles/reset.css"
 
 // Wraps every page in a component
 export const wrapPageElement = ({ element, props }) => {
