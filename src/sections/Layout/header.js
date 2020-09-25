@@ -1,18 +1,24 @@
 import React from "react"
-import { Header, Box, ResponsiveContext, Image, Layer, List } from "grommet"
+import { Header, Box, ResponsiveContext, Image, Layer } from "grommet"
+import { Link } from "gatsby"
+
 import Button from "../../components/button"
 import Text from "../../components/text"
 
 import MenuIcon from "../../components/icons/menu"
 import Exit from "../../components/icons/exit"
 import LogoHorizontal from "../../images/logo-horizontal.svg"
-import { Link } from "gatsby"
-import { hrefTo } from "@storybook/addon-links"
 
 export default ({ active }) => {
   const size = React.useContext(ResponsiveContext)
   const [showLayer, setShowLayer] = React.useState(false)
-  const locations = ["Products", "Blogs", "About", "Careers", "Language: क"]
+  const menuItems = [
+    { label: "Products", url: "/products" },
+    { label: "Blogs", url: "#" },
+    { label: "About", url: "#" },
+    { label: "Careers", url: "#" },
+    { label: "Language: क", url: "#" },
+  ]
 
   return (
     <div>
@@ -72,26 +78,24 @@ export default ({ active }) => {
             fill
             background="transparent"
             pad={{ horizontal: "large", vertical: "none" }}
-            margin={{ vertical: "small" }}
+            direction="column"
           >
-            <List
-              data={locations}
-              border={{ color: "w2", side: "bottom" }}
-              fill
-              pad={{ vertical: "small", horizontal: "none" }}
-            >
-              {(datum, index) => (
+            {menuItems.map((item, index) => (
+              <Box
+                border={{ color: "w2", side: "bottom" }}
+                pad={{ vertical: "small" }}
+              >
                 <Link
-                  to="#"
+                  to={item.url}
                   style={{ color: "inherit", textDecoration: "none" }}
                   key={index}
                 >
                   <Text code="body" style={{ lineHeight: "32px" }}>
-                    {datum}
+                    {item.label}
                   </Text>
                 </Link>
-              )}
-            </List>
+              </Box>
+            ))}
           </Box>
         </Layer>
       )}
