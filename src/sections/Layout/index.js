@@ -4,7 +4,7 @@ import Header from "./header"
 export default props => {
   return (
     <div>
-      <Header />
+      <Header active={props.active} />
       {props.children}
     </div>
   )
