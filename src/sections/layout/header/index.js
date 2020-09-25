@@ -2,12 +2,12 @@ import React from "react"
 import { Header, Box, ResponsiveContext, Image, Layer } from "grommet"
 import { Link } from "gatsby"
 
-import Button from "../../components/button"
-import Text from "../../components/text"
+import Button from "../../../components/button"
+import Text from "../../../components/text"
 
-import MenuIcon from "../../components/icons/menu"
-import Exit from "../../components/icons/exit"
-import LogoHorizontal from "../../images/logo-horizontal.svg"
+import MenuIcon from "../../../components/icons/menu"
+import Exit from "../../../components/icons/exit"
+import LogoHorizontal from "../../../images/logo-horizontal.svg"
 
 export default ({ active }) => {
   const size = React.useContext(ResponsiveContext)
