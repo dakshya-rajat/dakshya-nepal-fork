@@ -86,7 +86,7 @@ export const Colors = () => {
             </TableCell>
             <TableCell>Grayscale/W2</TableCell>
             <TableCell>
-              <code>p1</code>
+              <code>w2</code>
             </TableCell>
           </TableRow>
           <TableRow>
