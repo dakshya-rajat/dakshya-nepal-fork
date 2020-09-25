@@ -1,8 +1,8 @@
 import React from "react"
-import Header from "../sections/Layout/header"
+import Header from "../sections/layout/header"
 
 export default {
-  title: "Sections/Layout",
+  title: "Sections/layout",
 }
 
 export const header = () => {

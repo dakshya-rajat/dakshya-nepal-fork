@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../sections/Layout"
+import Layout from "../sections/layout"
 import SEO from "../components/seo"
 
 export default () => {

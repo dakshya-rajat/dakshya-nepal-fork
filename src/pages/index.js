@@ -1,7 +1,7 @@
 import React from "react"
 import Seo from "../components/seo"
 import { Heading, Box } from "grommet"
-import Layout from "../sections/Layout"
+import Layout from "../sections/layout"
 
 export default () => {
   return (
