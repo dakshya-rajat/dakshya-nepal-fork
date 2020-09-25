@@ -6,5 +6,5 @@ export default {
 }
 
 export const header = () => {
-  return <Header />
+  return <Header active="products" />
 }
