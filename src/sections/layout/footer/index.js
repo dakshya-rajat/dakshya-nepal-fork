@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Image, Collapsible, Button, ResponsiveContext } from "grommet"
+import { Box, Image, ResponsiveContext } from "grommet"
 import LogoHoriWhite from "../../../images/logo-horizontal-white.svg"
 import Facebook from "../../../components/icons/facebook"
 import Instagram from "../../../components/icons/instagram"
