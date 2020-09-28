@@ -1,5 +1,6 @@
 import React from "react"
 import { Layer } from "grommet"
+import { RemoveScroll } from "react-remove-scroll"
 
 import menuItems from "./menuItems.json"
 
@@ -17,9 +18,11 @@ export default ({ active }) => {
         menuItems={menuItems}
       />
       {showLayer && (
-        <Layer full animation="fadeIn">
-          <MobileMenu menuItems={menuItems} setShowLayer={setShowLayer} />
-        </Layer>
+        <RemoveScroll>
+          <Layer full animation="fadeIn">
+            <MobileMenu menuItems={menuItems} setShowLayer={setShowLayer} />
+          </Layer>
+        </RemoveScroll>
       )}
     </div>
   )
