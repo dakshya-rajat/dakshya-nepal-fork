@@ -1,16 +1,23 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 import { Image, Box } from "grommet"
 import ArrowRight from "../../components/icons/arrow-right"
 import Heading from "../../components/heading"
 
-export default ({ product }) => {
+export default ({ product, height, width, margin }) => {
   return (
-    <Box border={{ color: "w2", size: "2px" }} round="8px">
+    <Box
+      border={{ color: "w2", size: "2px" }}
+      round="8px"
+      width={width || null}
+      height={height || null}
+      background="w1"
+      margin={margin}
+      elevation="d1"
+    >
       <Box pad="24px">
         <Box direction="row">
           <Box flex="grow">
-            <Heading code={3} margin={{ vertical: "4px" }}>
+            <Heading code={3} margin={{ bottom: "4px", top: "0px" }}>
               {product.name}
             </Heading>
             <Heading code={4} color="h1" margin="0">
@@ -27,7 +34,7 @@ export default ({ product }) => {
         pad={{ top: "medium" }}
         round={{ corner: "bottom", size: "8px" }}
       >
-        <Image src={product.image} />
+        <Image src={product.image} fill="vertical" />
       </Box>
     </Box>
   )
