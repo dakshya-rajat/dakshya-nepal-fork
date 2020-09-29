@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "../components/card"
+import ProductCard from "../sections/productCard"
 
 export default {
   title: "Design/Cards",
@@ -29,5 +30,18 @@ export const cardWithShadow = () => {
         This card has a header shadow type according to the design
       </Card>
     </>
+  )
+}
+
+export const productCard = () => {
+  return (
+    <ProductCard
+      product={{
+        name: "Online Classes",
+        rate: "200",
+        url: "#",
+        image: "/illustrations/Girl on a chair.svg",
+      }}
+    />
   )
 }
