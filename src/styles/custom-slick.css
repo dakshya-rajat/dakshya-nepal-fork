@@ -1,0 +1,29 @@
+.slick-slide {
+    opacity: 0.2;
+}
+
+.slick-active {
+    opacity: 1;
+}
+
+.slick-dots{
+    position: relative;
+    bottom: -24px;
+    text-align: left;
+    left: 160px;
+    width: fit-content;
+}
+
+.slick-dots li {
+    width: 8px;
+    margin: 0 0 0 4px;
+    transition: all 400ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+li.slick-active {
+    width: 20px;
+}
+
+li.slick-active .dqUIUD {
+    background: black;
+}
