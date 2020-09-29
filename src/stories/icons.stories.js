@@ -19,10 +19,10 @@ import Twitter from "../components/icons/twitter"
 import User from "../components/icons/user"
 
 //colored icons
-import Book from "../images/icons/Book.svg"
-import Building from "../images/icons/Building.svg"
-import Domain from "../images/icons/Domain.svg"
-import Globe from "../images/icons/Globe.svg"
+import Book from "../../static/icons/Book.svg"
+import Building from "../../static/icons/Building.svg"
+import Domain from "../../static/icons/Domain.svg"
+import Globe from "../../static/icons/Globe.svg"
 
 export default {
   title: "Design/Graphics",
