@@ -1,0 +1,20 @@
+[
+  {
+  "name": "Smart School",
+  "price": "200",
+  "image": "/illustrations/Girl on a chair.svg",
+  "url": "#"
+  },
+  {
+    "name": "Online Tuition",
+    "price": "200",
+    "image": "/illustrations/Online classes.svg",
+    "url": "#"
+  },
+  {
+    "name": "Guidance Counseling",
+    "price": "200",
+    "image": "/illustrations/Guidance Counseling.svg",
+    "url": "#"
+  }
+]
