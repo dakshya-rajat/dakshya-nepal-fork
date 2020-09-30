@@ -8,10 +8,9 @@
 
 .slick-dots{
     position: relative;
-    bottom: -24px;
     text-align: left;
-    left: 160px;
     width: fit-content;
+    padding-left: 23vh;
 }
 
 .slick-dots li {
