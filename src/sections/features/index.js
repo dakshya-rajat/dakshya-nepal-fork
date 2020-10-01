@@ -10,8 +10,8 @@ export default props => {
       direction={mobile ? "column" : "row"}
       pad={
         mobile
-          ? { vertical: "64px", horizontal: "16px" }
-          : { vertical: "131.5px", horizontal: "129px" }
+          ? { top: "16px", horizontal: "64px" }
+          : { top: "129px", horizontal: "131.5px" }
       }
       gap="medium"
     >
