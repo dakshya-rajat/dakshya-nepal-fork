@@ -3,7 +3,6 @@ import Button from "../../../components/button"
 import { Link } from "gatsby"
 
 export default props => {
-  console.log(props.item.label)
   return (
     <Link to={props.item.url} style={{ margin: "auto 0" }}>
       {props.item.label.includes(":") ? (
