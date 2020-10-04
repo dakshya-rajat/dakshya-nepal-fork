@@ -17,7 +17,7 @@ export default props => {
           <Button secondary label="Explore" alignSelf="end" />
         </Box>
       </Box>
-      <Box margin={{ top: "48px" }} direction="row" gap="medium">
+      <ComponentSlider margin={{ top: "48px" }}>
         {classes.map((cls, index) => (
           <OnlineClassBlock
             title={cls.title}
@@ -25,11 +25,12 @@ export default props => {
             sesh={cls.sesh}
             price={cls.price}
             course={cls.course}
+            mobile={mobile}
             key={index}
           />
         ))}
-        <NewTutor />
-      </Box>
+        <NewTutor mobile={mobile} />
+      </ComponentSlider>
     </Box>
   )
 }
