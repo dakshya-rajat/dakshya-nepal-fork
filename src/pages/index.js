@@ -1,9 +1,9 @@
 import React from "react"
-import { Box } from "grommet"
 import Seo from "../components/seo"
 import Layout from "../sections/layout"
 import Slider from "../sections/slider"
 import Features from "../sections/features"
+import OnlineClasses from "../sections/onlineClasses"
 
 export default () => {
   return (
@@ -11,6 +11,7 @@ export default () => {
       <Seo title="Home" />
       <Slider />
       <Features />
+      <OnlineClasses />
     </Layout>
   )
 }
