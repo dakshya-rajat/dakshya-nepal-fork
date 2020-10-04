@@ -1,9 +1,11 @@
 import React from "react"
-import { Box } from "grommet"
+import { Box, Image } from "grommet"
 import Heading from "../../components/heading"
 import Button from "../../components/button"
 import classes from "./classes.json"
 import OnlineClassBlock from "./onlineClassBlock"
+import NewTutor from "./newTutor"
+
 export default props => {
   return (
     <Box pad={{ horizontal: "131.5px", top: "98px" }}>
@@ -15,7 +17,7 @@ export default props => {
           <Button secondary label="Explore" alignSelf="end" />
         </Box>
       </Box>
-      <Box margin={{ top: "48px" }} direction="row">
+      <Box margin={{ top: "48px" }} direction="row" gap="medium">
         {classes.map((cls, index) => (
           <OnlineClassBlock
             title={cls.title}
@@ -26,6 +28,7 @@ export default props => {
             key={index}
           />
         ))}
+        <NewTutor />
       </Box>
     </Box>
   )
