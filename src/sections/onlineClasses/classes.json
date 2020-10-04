@@ -1,27 +1,56 @@
-[{
-  "title": "Learn to create your own app in 60 minutes",
-  "tutor": {
-    "name": "Ujwal Dhakal",
-    "teaches": "1 - 5",
-    "special": "Web Developer",
-    "image": "/images/avatar1.png"
+[
+  {
+    "title": "Learn to create your own app in 60 minutes",
+    "tutor": {
+      "name": "Ujwal Dhakal",
+      "teaches": "1 - 5",
+      "special": "Web Developer",
+      "image": "/images/avatar1.png"
+    },
+    "sesh": {
+      "latest": "23rd Jul, 7:00 PM"
+    },
+    "course": [
+      {
+        "name": "Basics of coding"
+      },
+      {
+        "name": "Process of app development"
+      },
+      {
+        "name": "Customize applications"
+      },
+      {
+        "name": "With our first application"
+      }
+    ],
+    "price": "NPR 200"
   },
-  "sesh": {
-    "latest": "23rd Jul, 7:00 PM"
-  },
-  "course": [
-    {
-      "name": "Basics of coding"
+  {
+    "title": "Learn to create your own app in 60 minutes",
+    "tutor": {
+      "name": "Ujwal Dhakal",
+      "teaches": "1 - 5",
+      "special": "Web Developer",
+      "image": "/images/avatar2.png"
     },
-    {
-      "name": "Process of app development"
+    "sesh": {
+      "latest": "23rd Jul, 7:00 PM"
     },
-    {
-      "name": "Customize applications"
-    },
-    {
-      "name": "With our first application"
-    }
-  ],
-  "price": "NPR 200"
-}]
+    "course": [
+      {
+        "name": "Basics of coding"
+      },
+      {
+        "name": "Process of app development"
+      },
+      {
+        "name": "Customize applications"
+      },
+      {
+        "name": "With our first application"
+      }
+    ],
+    "price": "NPR 200"
+  }
+]
