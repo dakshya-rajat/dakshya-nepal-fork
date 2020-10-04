@@ -7,9 +7,13 @@ import Button from "../../components/button"
 import TutorBlock from "./tutorBlock"
 import CourseDetail from "./courseDetail"
 
-export default ({ title, tutor, sesh, price, course }) => {
+export default ({ title, tutor, sesh, price, course, mobile }) => {
   return (
-    <Box round="4px" border={{ color: "w2", size: "2px" }} width="33.33%">
+    <Box
+      round="4px"
+      border={{ color: "w2", size: "2px" }}
+      width={mobile ? "98%" : "33.33%"}
+    >
       <Box pad="24px">
         <Heading code={4}>{title}</Heading>
         <TutorBlock

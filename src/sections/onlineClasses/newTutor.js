@@ -4,9 +4,13 @@ import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
 
-export default props => {
+export default ({ mobile }) => {
   return (
-    <Box round="4px" border={{ color: "w2", size: "2px" }} width="33.33%">
+    <Box
+      round="4px"
+      border={{ color: "w2", size: "2px" }}
+      width={mobile ? "98%" : "33.33%"}
+    >
       <Box background="p1-l">
         <Image src="illustrations/Online classes.svg" fill="vertical" />
       </Box>
