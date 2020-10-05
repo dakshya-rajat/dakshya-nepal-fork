@@ -4,6 +4,7 @@ import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
 import ComponentSlider from "../componentSlider"
+import blogPosts from "./blogData.json"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -24,8 +25,15 @@ export default props => {
         </Box>
       </Box>
       <ComponentSlider margin={mobile ? { top: "16px" } : { top: "48px" }}>
-        {[1, 2, 3].map(index => (
-          <BlogCard key={index} mobile={mobile} />
+        {blogPosts.map((post, index) => (
+          <BlogCard
+            key={index}
+            mobile={mobile}
+            title={post.title}
+            image={post.image}
+            minRead={post.minRead}
+            category={post.category}
+          />
         ))}
       </ComponentSlider>
     </Box>
