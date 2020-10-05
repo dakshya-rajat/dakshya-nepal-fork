@@ -4,6 +4,7 @@ import Layout from "../sections/layout"
 import Slider from "../sections/slider"
 import Features from "../sections/features"
 import OnlineClasses from "../sections/onlineClasses"
+import Blog from "../sections/blog"
 
 export default () => {
   return (
@@ -12,6 +13,7 @@ export default () => {
       <Slider />
       <Features />
       <OnlineClasses />
+      <Blog />
     </Layout>
   )
 }
