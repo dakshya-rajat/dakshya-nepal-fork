@@ -1,11 +1,11 @@
 import React from "react"
-import { Box, Image } from "grommet"
+import { Image, Box } from "grommet"
 import Text from "../../components/text"
 import Heading from "../../components/heading"
 
-export default props => {
+export default ({ mobile }) => {
   return (
-    <Box width="33.33%" round="4px" border={{ color: "w2" }}>
+    <Box width={mobile ? "98%" : "33.33%"} round="4px" border={{ color: "w2" }}>
       <Image src="https://source.unsplash.com/random/352x200" />
       <Box pad={{ horizontal: "16px", top: "16px", bottom: "40px" }}>
         <Box direction="row">
