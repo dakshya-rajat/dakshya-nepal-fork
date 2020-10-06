@@ -1,9 +1,9 @@
 [
   {
-  "name": "Smart School",
-  "price": "200",
-  "image": "/illustrations/Girl on a chair.svg",
-  "url": "#"
+    "name": "Smart School",
+    "price": "200",
+    "image": "/illustrations/Girl on a chair.svg",
+    "url": "#"
   },
   {
     "name": "Online Tuition",
@@ -15,6 +15,18 @@
     "name": "Guidance Counseling",
     "price": "200",
     "image": "/illustrations/Guidance Counseling.svg",
+    "url": "#"
+  },
+  {
+    "name": "Kalam CMS",
+    "price": "200",
+    "image": "/illustrations/CMS.svg",
+    "url": "#"
+  },
+  {
+    "name": "Qbex",
+    "price": "200",
+    "image": "/illustrations/Qubex.svg",
     "url": "#"
   }
 ]
