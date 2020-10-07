@@ -5,6 +5,8 @@ import Slider from "../sections/slider"
 import Features from "../sections/features"
 import OnlineClasses from "../sections/onlineClasses"
 import Blog from "../sections/blog"
+import CtaBox from "../sections/ctaBox"
+import ClientSection from "../sections/clientSection"
 
 export default () => {
   return (
@@ -14,6 +16,8 @@ export default () => {
       <Features />
       <OnlineClasses />
       <Blog />
+      <CtaBox />
+      <ClientSection />
     </Layout>
   )
 }
