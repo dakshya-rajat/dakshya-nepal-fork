@@ -6,16 +6,16 @@ export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Box
+      gap="xlarge"
+      direction={mobile ? "column" : "row"}
       pad={
         mobile
           ? { top: "64px", horizontal: "16px" }
           : { top: "90px", horizontal: "131.5px" }
       }
     >
-      <Box gap="xlarge" direction={mobile ? "column" : "row"}>
-        <SectionBlock name="clientele" mobile={mobile} />
-        <SectionBlock name="Partners" mobile={mobile} />
-      </Box>
+      <SectionBlock name="clientele" mobile={mobile} />
+      <SectionBlock name="Partners" mobile={mobile} />
     </Box>
   )
 }
