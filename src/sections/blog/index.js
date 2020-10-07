@@ -32,7 +32,7 @@ export default props => {
             title={post.title}
             image={post.image}
             minRead={post.minRead}
-            category={post.category}
+            category={post.tag}
           />
         ))}
       </ComponentSlider>
