@@ -7,6 +7,7 @@ import OnlineClasses from "../sections/onlineClasses"
 import Blog from "../sections/blog"
 import CtaBox from "../sections/ctaBox"
 import ClientSection from "../sections/clientSection"
+import Testimonial from "../sections/testimonial"
 
 export default () => {
   return (
@@ -18,6 +19,7 @@ export default () => {
       <Blog />
       <CtaBox />
       <ClientSection />
+      <Testimonial />
     </Layout>
   )
 }
