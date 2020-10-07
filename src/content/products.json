@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Smart School",
+    "price": 200,
+    "link": "#",
+    "image": "/images/products/ss.svg"
+  },
+  {
+    "name": "Online Tuition",
+    "price": 200,
+    "link": "#",
+    "image": "/images/products/oc.svg"
+  },
+  {
+    "name": "Guidance Counselling",
+    "price": 200,
+    "link": "#",
+    "image": "/images/products/gc.svg"
+  },
+  {
+    "name": "Kalam CMS",
+    "price": 200,
+    "link": "#",
+    "image": "/images/products/cms.svg"
+  },
+  {
+    "name": "Qbex",
+    "price": 200,
+    "link": "#",
+    "image": "/images/products/qbx.svg"
+  }
+]
