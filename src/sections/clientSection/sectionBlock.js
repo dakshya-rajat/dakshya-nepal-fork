@@ -1,5 +1,5 @@
 import React from "react"
-import { Image, Box, Grid, Avatar } from "grommet"
+import { Image, Box } from "grommet"
 import Heading from "../../components/heading"
 import SlideSelector from "./slideSelector"
 
