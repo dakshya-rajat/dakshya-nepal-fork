@@ -5,12 +5,7 @@ import Heading from "../../components/heading"
 
 export default ({ product }) => {
   return (
-    <Box
-      border={{ color: "w2", size: "2px" }}
-      round="8px"
-      background="w1"
-      elevation="d1"
-    >
+    <Box border={{ color: "w2", size: "2px" }} round="8px" background="w1">
       <Box pad="24px">
         <Box direction="row">
           <Box flex="grow">
