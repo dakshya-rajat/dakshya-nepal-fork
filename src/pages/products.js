@@ -9,7 +9,7 @@ export default () => {
     <Layout active="products">
       <SEO title="Products" />
       <ProductList />
-      <CtaBox marginTop marginBottom />
+      <CtaBox marginBottom />
     </Layout>
   )
 }
