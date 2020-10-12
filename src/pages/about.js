@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import VerticalText from "../sections/verticalText"
 import FeatureAbout from "../sections/featureAbout"
 import BenefitSection from "../sections/benefitSection"
+import Team from "../sections/team"
 
 export default () => {
   return (
@@ -12,6 +13,7 @@ export default () => {
       <VerticalText />
       <FeatureAbout />
       <BenefitSection />
+      <Team />
     </Layout>
   )
 }
