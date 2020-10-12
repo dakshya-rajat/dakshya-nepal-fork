@@ -1,6 +1,6 @@
 import React from "react"
 import Card from "../components/card"
-import ProductCard from "../sections/productCard"
+import ProductCard from "../sections/slider/productCard"
 
 export default {
   title: "Design/Cards",

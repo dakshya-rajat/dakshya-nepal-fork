@@ -4,20 +4,10 @@ import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
 
-export default ({ marginTop, marginBottom }) => {
+export default ({ marginBottom }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
-    <Box
-      pad={
-        marginTop
-          ? mobile
-            ? { top: "60px" }
-            : { top: "24px" }
-          : mobile
-          ? { top: "64px" }
-          : { top: "90px" }
-      }
-    >
+    <Box pad={mobile ? { top: "64px" } : { top: "90px" }}>
       <Box
         pad={mobile ? { horizontal: "16px" } : { horizontal: "131.5px" }}
         margin={

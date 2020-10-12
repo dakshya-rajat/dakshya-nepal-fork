@@ -1,7 +1,7 @@
 [
   { "label": "Products", "url": "/products" },
   { "label": "Blogs", "url": "#" },
-  { "label": "About", "url": "#" },
+  { "label": "About", "url": "/about" },
   { "label": "Careers", "url": "#" },
   { "label": "Language: क", "url": "#" }
 ]
