@@ -5,6 +5,7 @@ import VerticalText from "../sections/verticalText"
 import FeatureAbout from "../sections/featureAbout"
 import BenefitSection from "../sections/benefitSection"
 import Team from "../sections/team"
+import CtaBox from "../sections/ctaBox"
 
 export default () => {
   return (
@@ -14,6 +15,7 @@ export default () => {
       <FeatureAbout />
       <BenefitSection />
       <Team />
+      <CtaBox marginTop marginBottom />
     </Layout>
   )
 }
