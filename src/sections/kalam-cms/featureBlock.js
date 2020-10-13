@@ -5,11 +5,11 @@ import Text from "../../components/text"
 
 export default ({ title, description, icon, mobile }) => {
   return (
-    <Box margin={{ top: "40px", right: "24px" }}>
+    <Box>
       <Avatar size="80px" pad="20px" border={{ color: "w2" }}>
         <Image src={icon} fill />
       </Avatar>
-      <Heading code={3} margin={{ vertical: "16px" }} size="small">
+      <Heading code={3} size="small">
         {title}
       </Heading>
       <Text code="subtext-r" color="b2" size="small">

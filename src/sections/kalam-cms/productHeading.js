@@ -12,7 +12,6 @@ export default props => {
           ? { top: "49px", horizontal: "16px" }
           : { top: "31px", horizontal: "131px" }
       }
-      maxWidth="100%"
     >
       <Heading code={2}>
         Create, Manage, Modify and Publish your website with a powerful CMS

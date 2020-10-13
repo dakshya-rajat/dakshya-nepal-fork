@@ -15,7 +15,11 @@ export default props => {
       }
     >
       <Heading code={2}>Features</Heading>
-      <Grid columns={mobile ? "50%" : "25%"}>
+      <Grid
+        columns={mobile ? "44%" : "22%"}
+        pad={{ top: "40px" }}
+        gap={{ row: "medium", column: "medium" }}
+      >
         {features.map((data, index) => (
           <FeatureBlock
             icon={data.icon}

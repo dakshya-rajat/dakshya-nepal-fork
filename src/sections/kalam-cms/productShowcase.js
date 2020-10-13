@@ -15,7 +15,7 @@ export default props => {
       }
     >
       <Heading code={2}>Why Kalam?</Heading>
-      <Box>
+      <Box gap="medium" pad={{ top: "32px" }}>
         {showcasedata.map((data, index) => (
           <ProductShowcaseCard
             image={data.image}
