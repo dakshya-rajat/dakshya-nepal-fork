@@ -313,6 +313,6 @@ export default {
   //adding heading properties according to the design
   heading: {
     weight: 500,
-    extend: `text-transform: capitalize`,
+    extend: `text-transform: capitalize; max-width: 100%!important`,
   },
 }
