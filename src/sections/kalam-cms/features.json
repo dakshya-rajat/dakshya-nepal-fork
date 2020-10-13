@@ -1,0 +1,52 @@
+[
+  {
+    "icon": "/icons/Kalam/Dashboard.svg",
+    "title": "Dashboard",
+    "description": "A control panel which lets you create,manage,and modify your website content."
+  },
+  {
+    "icon": "/icons/Kalam/Noticeboard.svg",
+    "title": "NoticeBoard",
+    "description": "Schedule or Instantly update notices on website also from your smartphone."
+  },
+  {
+    "icon": "/icons/Kalam/Polls.svg",
+    "title": "Polls & Opinions",
+    "description": "Create Polls & Surveys and analyze because every voice matters."
+  },
+  {
+    "icon": "/icons/Kalam/Calender.svg",
+    "title": "Events and Calendar",
+    "description": "Upload year round Events and Holidays."
+  },
+  {
+    "icon": "/icons/Kalam/Multemedia.svg",
+    "title": "Multimedia",
+    "description": "All your organization’s media beautifully organized at one place."
+  },
+  {
+    "icon": "/icons/Kalam/Online class.svg",
+    "title": "Online Class & Meeting",
+    "description": "Schedule video conferencing details on the platform."
+  },
+  {
+    "icon": "/icons/Kalam/Discussion.svg",
+    "title": "Discussion Forum",
+    "description": "Discuss, share and help each other."
+  },
+  {
+    "icon": "/icons/Kalam/Admin.svg",
+    "title": "Admins",
+    "description": "Create multiple administrators for your website with different user privileges."
+  },
+  {
+    "icon": "/icons/Kalam/Apply.svg",
+    "title": "Apply to this College",
+    "description": "Let interested students apply to your institution for further education."
+  },
+  {
+    "icon": "/icons/Kalam/Ask.svg",
+    "title": "Ask a Question",
+    "description": "Let’s anyone ask questions to the administration anonymously."
+  }
+]
