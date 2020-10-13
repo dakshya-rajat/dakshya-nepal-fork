@@ -3,6 +3,7 @@ import Layout from "../sections/layout"
 import Seo from "../components/seo"
 import JoinUs from "../sections/joinUs"
 import CareerDropdown from "../sections/careersDropdown"
+import CareerMail from "../sections/careerMail"
 
 export default props => {
   return (
@@ -10,6 +11,7 @@ export default props => {
       <Seo title="Careers" />
       <JoinUs />
       <CareerDropdown />
+      <CareerMail />
     </Layout>
   )
 }
