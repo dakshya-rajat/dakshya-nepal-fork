@@ -1,0 +1,17 @@
+[
+  {
+    "number": "1",
+    "title": "Classroom Study",
+    "description": "Concept is taught in classroom."
+  },
+  {
+    "number": "2",
+    "title": "Self Study",
+    "description": "Student studies the same concept in studynlearn package."
+  },
+  {
+    "number": "3",
+    "title": "Quiz Practice",
+    "description": "Student practices quiz for the same concepts."
+  }
+]
