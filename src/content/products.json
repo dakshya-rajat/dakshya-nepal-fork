@@ -2,7 +2,7 @@
   {
     "name": "Smart School",
     "price": 200,
-    "link": "#",
+    "link": "/products/smart-school",
     "image": "/images/products/ss.svg"
   },
   {
@@ -20,7 +20,7 @@
   {
     "name": "Kalam CMS",
     "price": 200,
-    "link": "#",
+    "link": "/products/kalam-cms",
     "image": "/images/products/cms.svg"
   },
   {
