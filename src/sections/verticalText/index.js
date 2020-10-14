@@ -29,7 +29,7 @@ export default props => {
             }}
           />
           <Box
-            height={mobile ? "30%" : "12%"}
+            height={mobile ? "30%" : "8%"}
             width={mobile ? "88%" : "30%"}
             background={`linear-gradient(180deg, #FFFFFE 0%, rgba(254, 250, 237, 0) 87.5%)`}
             style={{
