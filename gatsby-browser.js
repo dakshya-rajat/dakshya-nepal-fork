@@ -10,6 +10,13 @@ import { Grommet } from "grommet"
 import dakshyaTheme from "./grommet.theme"
 import "./src/styles/reset.css"
 
+export const onInitialClientRender = () => {
+  document.getElementById("___gatsby").style.display = "block"
+  setTimeout(function () {
+    document.getElementById("___loader").style.display = "none"
+  }, 200)
+}
+
 // Wraps every page in a component
 export const wrapPageElement = ({ element, props }) => {
   var Tawk_API = Tawk_API || {},
