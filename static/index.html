@@ -32,15 +32,15 @@
           z-index: 9999999;
       }
       #loading-bar {
-          height: 4px;
           margin-top: 10%;
           background: #EAEAEA;
           border-radius: 4px;
       }
       @keyframes loading-animation {
           0%   {margin-left: 0%;}
-          50%  {margin-left: 100%;}
-          100% {margin-left: 0%;}
+          25%  {margin-left: 100%;}
+          50%  {margin-left: 0%;}
+          100% {margin-left: 100%;}
       }
       #active-bar {
           background-color: #000000;
@@ -48,10 +48,9 @@
           height: 4px;
           width: 18px;
           margin-left: 0%;
-          animation: loading-animation 1s ease-in-out 1s infinite;
+          animation: loading-animation 500ms ease-in-out 1s infinite;
 
       }
-
     </style>
   </head>
   <body>
