@@ -12,7 +12,8 @@ export default ({ mobile }) => {
   const settings = {
     className: "center",
     centerMode: true,
-    infinite: false,
+    infinite: true,
+    autoplay: true,
     speed: 500,
     initialSlide: 1,
     centerPadding: "0px",
