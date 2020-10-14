@@ -14,7 +14,7 @@ export const onInitialClientRender = () => {
   document.getElementById("___gatsby").style.display = "block"
   setTimeout(function () {
     document.getElementById("___loader").style.display = "none"
-  }, 1500)
+  }, 0)
 }
 
 // Wraps every page in a component
