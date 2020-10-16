@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Header, Image, ResponsiveContext } from "grommet"
+import { Box, Header, Image, ResponsiveContext } from "grommet"
 import LogoHorizontal from "../../../images/logo-horizontal.svg"
 
 export default props => {
@@ -13,11 +13,14 @@ export default props => {
         size === "small" ? "16px" : { horizontal: "131px", vertical: "24px" }
       }
       elevation="header"
+      direction="column"
     >
-      <Link to="/">
-        <Image src={LogoHorizontal} label="Dakshya Nepal" />
-      </Link>
-      {props.children}
+      <Box direction="row" width="100%">
+        <Link to="/">
+          <Image src={LogoHorizontal} label="Dakshya Nepal" />
+        </Link>
+        {props.children}
+      </Box>
     </Header>
   )
 }
