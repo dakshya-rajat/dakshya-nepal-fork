@@ -16,35 +16,28 @@ export default props => {
           ? { top: "64px", horizontal: "16px" }
           : { top: "90px", horizontal: "131.5px" }
       }
+      gap="medium"
     >
-      <Box direction={mobile ? "column" : "row"} justify="between">
+      <Box
+        direction={mobile ? "column" : "row"}
+        justify="between"
+        alignContent="center"
+        gap="small"
+      >
         <Heading code={2}>
           Lets start learning with Guidance Counseling sessions
         </Heading>
-        <Box
-          margin={{ top: "16px" }}
-          background="h1"
-          justify="center"
-          pad="16px"
-          style={{ borderRadius: "8px" }}
-        >
-          <Heading code={4} color="#ffffff" size="small">
+        <Box background="h1" pad="16px" round={{ size: "8px" }}>
+          <Heading code={4} color="#ffffff" size="small" alignSelf="center">
             First Session On Us!
           </Heading>
         </Box>
       </Box>
-      <Box
-        margin={{ vertical: "32px" }}
-        direction="row"
-        border={{ color: "w2", size: "2px" }}
-        round="8px"
-      >
-        <Box width={mobile ? "100%" : "50%"}>
-          <Box margin={{ vertical: "24px", horizontal: "16px" }}>
-            <Box>
-              <Text margin={{ bottom: "8px" }} size="small">
-                Need guidance as
-              </Text>
+      <Box direction="row" border={{ color: "w2", size: "2px" }} round="8px">
+        <Box width={mobile ? "100%" : "50%"} pad="16px" gap="medium">
+          <Box gap="small">
+            <Box gap="xsmall">
+              <Text size="small">Need guidance as</Text>
               <Select
                 placeholder="Select one"
                 size="small"
@@ -64,10 +57,8 @@ export default props => {
               label="School Name"
               placeholder="Your school name as applicable"
             />
-            <Box>
-              <Text margin={{ bottom: "8px" }} size="small">
-                Nature of Counseling you are seeking
-              </Text>
+            <Box gap="xsmall">
+              <Text size="small">Nature of Counseling you are seeking</Text>
               <Select
                 placeholder="Select one"
                 size="small"
@@ -80,10 +71,8 @@ export default props => {
               label="Describe the hardships you are facing in few words"
               placeholder="Your hardships"
             />
-            <Box>
-              <Text margin={{ bottom: "8px" }} size="small">
-                Available for Counseling via
-              </Text>
+            <Box gap="xsmall">
+              <Text size="small">Available for Counseling via</Text>
               <Select
                 placeholder="Select one"
                 size="small"
@@ -92,9 +81,9 @@ export default props => {
                 onChange={({ option }) => setValue(option)}
               />
             </Box>
-            <Box margin={{ top: "24px" }} width="small">
-              <Button primary label="Book Your Session" />
-            </Box>
+          </Box>
+          <Box width={mobile ? "100%" : "small"}>
+            <Button primary label="Book Your Session" />
           </Box>
         </Box>
         <Box

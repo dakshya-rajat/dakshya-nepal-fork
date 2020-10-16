@@ -12,9 +12,10 @@ export default props => {
           ? { top: "49px", horizontal: "16px" }
           : { top: "31px", horizontal: "131px" }
       }
+      gap="small"
     >
       <Heading code={2}>Guidance Counseling</Heading>
-      <Text margin={{ top: "16px" }} color="b2" code="sub-r">
+      <Text color="b2" code="sub-r">
         Viverra turpis neque massa est erat felis lectus rhoncus magnis. Rutrum
         quam arcu habitant est. Condimentum sed enim est, fermentum id egestas.
         Amet, eget neque aliquet ultricies ac nibh elementum velit et.
