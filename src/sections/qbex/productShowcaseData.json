@@ -1,0 +1,42 @@
+[
+    {
+      "image": "/illustrations/products/qbex/Basic Information Management System.svg",
+      "title": "Basic Information Management System (BIMS)",
+      "description": "With a capacity to generate around 1500 report cards per hour, this enables examination planning, implementation and evaluation management with respect to marks and grading. Various reports can be generated from this system."
+    },
+    {
+      "image": "/illustrations/products/qbex/Online Learning and Examination Platform.svg",
+      "title": "Online Learning and Examination Platform",
+      "description": "Employees of the school can be profiled with respect to basic information, attendance and leave management, shift management along with reports being generated accordingly."
+    },
+    {
+      "image": "/illustrations/products/qbex/Examination Management System.svg",
+      "title": "Examination Management System (EMIS)",
+      "description": "With a capacity to generate around 1500 report cards per hour, this enables examination planning, implementation and evaluation management with respect to marks and grading. Various reports can be generated from this system."
+    },
+    {
+        "image": "/illustrations/products/qbex/Human Resource Management System.svg",
+        "title": "Human Resource Management System (HRMS)",
+        "description": "Employees of the school can be profiled with respect to basic information, attendance and leave management, shift management along with reports being generated accordingly."
+      },
+      {
+        "image": "/illustrations/products/qbex/Finance Management System.svg",
+        "title": "Finance Management System",
+        "description": "It is a complete accounting software package which incorporates all kinds of financial reports necessary for a school. Fee, payroll and vendor management can be done through this. All the legal compliances are also incorporated in this system."
+      },
+      {
+        "image": "/illustrations/products/qbex/Library Management System.svg",
+        "title": "Library Management System",
+        "description": "This system assists in library operation by monitoring records of books and borrower records. It facilitates barcode integration, book tracking and borrower’s report integration."
+      },
+      {
+        "image": "/illustrations/products/qbex/Inventory Management System.svg",
+        "title": "Inventory Management System",
+        "description": "It helps track all supplies, stock and sales and generate reports as per user requirement."
+      },
+      {
+        "image": "/illustrations/products/qbex/Transport Management System.svg",
+        "title": "Transport Management System",
+        "description": "Bus tracking, students’ bus records, bus drivers’ profiling can be done through this system which also allows GPS tracking with live tracking facility."
+      }
+  ]
