@@ -8,7 +8,7 @@ export default props => {
   return (
     <div>
       <Header>
-        <Box justify="end" onClick={() => props.setShowLayer(false)}>
+        <Box flex="grow" align="end" onClick={() => props.setShowLayer(false)}>
           <Exit />
         </Box>
       </Header>

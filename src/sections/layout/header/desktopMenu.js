@@ -11,11 +11,15 @@ export default props => {
       <ResponsiveContext.Consumer>
         {size =>
           size === "small" ? (
-            <Box justify="end" onClick={() => props.setShowLayer(true)}>
+            <Box
+              align="end"
+              flex="grow"
+              onClick={() => props.setShowLayer(true)}
+            >
               <MenuIcon />
             </Box>
           ) : (
-            <Box justify="end" direction="row" gap="medium">
+            <Box justify="end" direction="row" flex="grow" gap="medium">
               {props.menuItems.map((item, index) => (
                 <DesktopMenuItem
                   item={item}
