@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "/icons/Qubex/Students & Parents.svg",
+      "title": "Students & Parents",
+      "description": "Students can join online classes, receive and submit assignments and even sit in online exams. Parents can keep track of daily school activities and children’s performance."
+    },
+    {
+      "icon": "/icons/Qubex/Teachers.svg",
+      "title": "Teachers",
+      "description": "Teachers can submit self-attendance and keep track of student attendance. Teachers can also manage online classes and assignments and even online exams. Qbex also provides the most efficient report card generation that frees teachers from a lot of stress."
+    },
+    {
+      "icon": "/icons/Qubex/Admin.svg",
+      "title": "Admin & Management",
+      "description": "Admins have overall access and control of the system and all managerial tasks can be completed with ease in less time. Any department of the institution can be handled with less efforts providing great efficiency."
+    }
+]
