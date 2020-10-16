@@ -1,0 +1,22 @@
+[
+  {
+    "number": "1",
+    "title": "Book your session ",
+    "description": "Book your counseling session by filling the form."
+  },
+  {
+    "number": "2",
+    "title": "We will contact you",
+    "description": "We will contact you and set up a meeting."
+  },
+  {
+    "number": "3",
+    "title": "Guidance Counseling",
+    "description": "Guidance Counselor will complete the requires process."
+  },
+  {
+    "number": "4",
+    "title": "Follow up if necessary ",
+    "description": "Follow up if necessary ."
+  }
+]
