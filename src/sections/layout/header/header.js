@@ -11,7 +11,9 @@ export default props => {
   return (
     <Header
       background="w1"
-      pad={size === "small" ? "16px" : { horizontal: "131px", top: "24px" }}
+      pad={
+        size === "small" ? "16px" : { horizontal: "131px", vertical: "24px" }
+      }
       elevation="header"
       direction="column"
     >

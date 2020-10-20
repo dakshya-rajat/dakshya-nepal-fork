@@ -10,7 +10,7 @@ import chevUp from "../../../components/icons/chevron-up"
 import chevDown from "../../../components/icons/chevron-down"
 
 export default props => {
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const Icon = open ? chevUp : chevDown
 
   return (
@@ -31,9 +31,9 @@ export default props => {
           <Button alignSelf="end" primary label="Know More" />
         </Box>
       </Box>
-      <Box width="100%" pad={{ top: "24px" }}>
+      <Box width="100%">
         <Collapsible open={open} {...props}>
-          <Grid columns="31%" gap="medium" pad={{ bottom: "24px" }}>
+          <Grid columns="31%" gap="medium" pad={{ top: "24px" }}>
             {products.map((product, index) => (
               <Card product={product} key={index} />
             ))}
