@@ -3,15 +3,15 @@ import { Link } from "gatsby"
 import { Box, Header, Image, ResponsiveContext } from "grommet"
 import LogoHorizontal from "../../../images/logo-horizontal.svg"
 
+import ProductMenu from "./productMenu"
+
 export default props => {
   const size = React.useContext(ResponsiveContext)
 
   return (
     <Header
       background="w1"
-      pad={
-        size === "small" ? "16px" : { horizontal: "131px", vertical: "24px" }
-      }
+      pad={size === "small" ? "16px" : { horizontal: "131px", top: "24px" }}
       elevation="header"
       direction="column"
     >
@@ -21,6 +21,7 @@ export default props => {
         </Link>
         {props.children}
       </Box>
+      <ProductMenu />
     </Header>
   )
 }
