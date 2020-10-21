@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Dakshya Online`,
@@ -5,6 +9,19 @@ module.exports = {
     author: `@rawalyogendra`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-google-docs`,
+      options: {
+        folders: [`${process.env.GOOGLE_DOCS_FOLDER}`],
+        debug: true,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-images`],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
