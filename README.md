@@ -28,6 +28,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     .
     ├── node_modules
     ├── src
+    ├── .storybook
+    ├── static
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js
@@ -81,3 +83,11 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to their documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
+## 💾 Data Sourcing
+
+We are using google drive to source data for our application. 
+There is a sample **`.env.sample`** file which is required to source the data from google drive.
+There is easy way to do this. you can simple run `yarn token` to run a wizard to help you get you all the token required
+and create a `.env` file for you. 
+
+`[VIDEO SHOULD BE ADDED]`
