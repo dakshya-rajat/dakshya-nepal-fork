@@ -23,7 +23,7 @@ export default props => {
         </Link>
         {props.children}
       </Box>
-      <ProductMenu />
+      {props.productMenu && <ProductMenu />}
     </Header>
   )
 }
