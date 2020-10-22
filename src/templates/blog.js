@@ -47,7 +47,6 @@ const transform = node => {
     } else if (node.children[0].name === "span") {
       const image = node.children[0]
       image.attribs.style = image.attribs.style.replace("650px", "100%")
-      console.log(image.attribs.style)
       convertNodeToElement(image)
       return
     }
