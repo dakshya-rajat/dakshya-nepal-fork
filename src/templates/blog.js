@@ -2,7 +2,7 @@ import React from "react"
 import ReactParser, { convertNodeToElement } from "react-html-parser"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Box, Image } from "grommet"
+import { Box, Image, ResponsiveContext } from "grommet"
 import {
   FacebookShareButton,
   InstapaperShareButton,
@@ -56,10 +56,11 @@ const transform = node => {
 export default ({ data: { post }, location }) => {
   const url = post.path
   const category = url.match(/(?<=\/)(.*?)(?=\/)/g)
+  const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Layout>
       <SEO title={post.name} />
-      <Box pad={{ horizontal: "268px" }}>
+      <Box pad={mobile ? { horizontal: "16px" } : { horizontal: "268px" }}>
         <Box gap="small" direction="row" pad={{ top: "32px" }}>
           <ArrowLeft color="b1" />
           <Text code="sub-r" color="b2">
