@@ -56,7 +56,6 @@ const transform = node => {
 export default ({ data: { post }, location }) => {
   const url = post.path
   const category = url.match(/(?<=\/)(.*?)(?=\/)/g)
-  console.log(category)
   return (
     <Layout>
       <SEO title={post.name} />
