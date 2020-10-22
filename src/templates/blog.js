@@ -4,6 +4,12 @@ import DOMPurify from "dompurify"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Box, Image } from "grommet"
+import {
+  FacebookShareButton,
+  InstapaperShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+} from "react-share"
 
 import Layout from "../sections/layout"
 import SEO from "../components/seo"
@@ -89,10 +95,18 @@ export default ({ data: { post }, location }) => {
           gap="small"
           pad={{ vertical: "medium" }}
         >
-          <Facebook color="b1" />
-          <Twitter color="b1" />
-          <Instagram color="b1" />
-          <Linkedin color="b1" />
+          <FacebookShareButton url={url}>
+            <Facebook color="b1" />
+          </FacebookShareButton>
+          <TwitterShareButton url={url}>
+            <Twitter color="b1" />
+          </TwitterShareButton>
+          <InstapaperShareButton url={url}>
+            <Instagram color="b1" />
+          </InstapaperShareButton>
+          <LinkedinShareButton url={url}>
+            <Linkedin color="b1" />
+          </LinkedinShareButton>
         </Box>
       </Box>
     </Layout>
