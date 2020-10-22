@@ -6,8 +6,19 @@ import Button from "../../components/button"
 import BlogCard from "./blogCard"
 import ComponentSlider from "../componentSlider"
 
-export default ({ blogPosts, title, url }) => {
+export default ({ title, url, data }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+
+  const blogPosts = []
+  data.allGoogleDocs.nodes.map(data =>
+    blogPosts.push({
+      title: data.name,
+      minRead: data.childMarkdownRemark.timeToRead,
+      image: data.cover.image.childImageSharp.fluid,
+      link: data.path,
+    })
+  )
+
   return (
     <Box>
       <Box
