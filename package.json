@@ -27,6 +27,7 @@
     "react-helmet": "^6.1.0",
     "react-html-parser": "^2.0.2",
     "react-remove-scroll": "^2.4.0",
+    "react-share": "^4.3.1",
     "react-slick": "^0.27.11",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.0"
