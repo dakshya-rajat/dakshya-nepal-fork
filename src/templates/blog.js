@@ -54,8 +54,9 @@ const transform = node => {
 }
 
 export default ({ data: { post }, location }) => {
-  const url = location.href ? location.href : ""
+  const url = post.path
   const category = url.match(/(?<=\/)(.*?)(?=\/)/g)
+  console.log(category)
   return (
     <Layout>
       <SEO title={post.name} />
@@ -66,7 +67,7 @@ export default ({ data: { post }, location }) => {
             {post.createdTime}
           </Text>
           <Text code="sub-r" color="b2" style={{ textTransform: "capitalize" }}>
-            {category[2].replace("-", " ")}
+            {category[0].replace("-", " ")}
           </Text>
           <Text code="sub-r" color="b2">
             {post.childMarkdownRemark.timeToRead} mins read
@@ -118,6 +119,7 @@ export const query = graphql`
         html
         timeToRead
       }
+      path
       name
       createdTime(fromNow: true)
       cover {
