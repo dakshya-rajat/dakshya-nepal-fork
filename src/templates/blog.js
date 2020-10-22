@@ -1,6 +1,5 @@
 import React from "react"
 import ReactParser, { convertNodeToElement } from "react-html-parser"
-import DOMPurify from "dompurify"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Box, Image } from "grommet"
@@ -83,7 +82,7 @@ export default ({ data: { post }, location }) => {
           />
         </Box>
         <Box gap="medium">
-          {ReactParser(DOMPurify.sanitize(post.childMarkdownRemark.html), {
+          {ReactParser(post.childMarkdownRemark.html, {
             transform,
           })}
         </Box>
