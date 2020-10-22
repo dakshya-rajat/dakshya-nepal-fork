@@ -1,12 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Box, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
 import ComponentSlider from "../componentSlider"
-import blogPosts from "./blogData.json"
 
-export default props => {
+export default ({ blogPosts, title, url }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Box>
@@ -18,9 +18,15 @@ export default props => {
         }
       >
         <Box direction="row">
-          <Heading code={2}>Blogs</Heading>
+          <Heading code={2}>{title}</Heading>
           <Box flex="grow">
-            <Button secondary label="view all" alignSelf="end" />
+            {url ? (
+              <Box alignSelf="end">
+                <Link to={url}>
+                  <Button secondary label="view all" />
+                </Link>
+              </Box>
+            ) : null}
           </Box>
         </Box>
       </Box>
@@ -32,7 +38,7 @@ export default props => {
             title={post.title}
             image={post.image}
             minRead={post.minRead}
-            category={post.category}
+            link={post.link}
           />
         ))}
       </ComponentSlider>
