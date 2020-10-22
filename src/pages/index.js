@@ -1,4 +1,7 @@
 import React from "react"
+
+import { graphql } from "gatsby"
+
 import Seo from "../components/seo"
 import Layout from "../sections/layout"
 import Slider from "../sections/slider"
@@ -10,14 +13,23 @@ import ClientSection from "../sections/clientSection"
 import Testimonial from "../sections/testimonial"
 import Newsletter from "../sections/newsletter"
 
-export default () => {
+export default ({ data }) => {
+  const blogPosts = []
+  data.allGoogleDocs.nodes.map(data =>
+    blogPosts.push({
+      title: data.name,
+      minRead: data.childMarkdownRemark.timeToRead,
+      image: data.cover.image.childImageSharp.fluid,
+      link: data.path,
+    })
+  )
   return (
     <Layout>
       <Seo title="Home" />
       <Slider />
       <Features />
       <OnlineClasses />
-      <Blog />
+      <Blog title="blog" url="/blog" blogPosts={blogPosts} />
       <CtaBox />
       <ClientSection />
       <Testimonial />
@@ -25,3 +37,26 @@ export default () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    allGoogleDocs(limit: 3) {
+      nodes {
+        name
+        path
+        childMarkdownRemark {
+          timeToRead
+        }
+        cover {
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
