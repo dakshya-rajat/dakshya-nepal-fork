@@ -4,7 +4,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "../../styles/custom-slick.css"
-import products from "../../templates/products.json"
+import products from "../../content/slider_products.json"
 import ProductCard from "./productCard"
 import Dot from "./sliderDot"
 
