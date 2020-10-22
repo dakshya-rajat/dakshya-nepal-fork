@@ -14,22 +14,13 @@ import Testimonial from "../sections/testimonial"
 import Newsletter from "../sections/newsletter"
 
 export default ({ data }) => {
-  const blogPosts = []
-  data.allGoogleDocs.nodes.map(data =>
-    blogPosts.push({
-      title: data.name,
-      minRead: data.childMarkdownRemark.timeToRead,
-      image: data.cover.image.childImageSharp.fluid,
-      link: data.path,
-    })
-  )
   return (
     <Layout>
       <Seo title="Home" />
       <Slider />
       <Features />
       <OnlineClasses />
-      <Blog title="blog" url="/blog" blogPosts={blogPosts} />
+      <Blog title="blog" url="/blog" data={data} />
       <CtaBox />
       <ClientSection />
       <Testimonial />
