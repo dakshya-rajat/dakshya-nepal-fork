@@ -3,7 +3,7 @@ import { Box } from "grommet"
 
 export default () => {
   return (
-    <a>
+    <a href="#blank">
       <Box width="100%" height="8px" background="g1" round />
     </a>
   )
