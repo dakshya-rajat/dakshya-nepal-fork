@@ -7,13 +7,18 @@ import ProductShowcase from "../../sections/qbex/productShowcase"
 import ContactSalesForm from "../../sections/contactSalesForm"
 
 export default () => {
+  const product = "Qbex"
   return (
     <Layout active="products">
-      <SEO title="Qbex" />
-     <QbexHeading/>
-     <QbexFeatures/>
-      < ProductShowcase/>
-      <ContactSalesForm title="Contact Sales Form" />
+      <SEO title={product} />
+      <QbexHeading />
+      <QbexFeatures />
+      <ProductShowcase />
+      <ContactSalesForm
+        title="Contact Sales Form"
+        product={product}
+        image="/illustrations/Qubex.svg"
+      />
     </Layout>
   )
 }
