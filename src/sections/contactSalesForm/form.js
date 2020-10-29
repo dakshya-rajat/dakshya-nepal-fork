@@ -6,7 +6,7 @@ import Button from "../../components/button"
 export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
-    <Box margin={{ vertical: "24px", horizontal: "16px" }}>
+    <Box margin={{ vertical: "24px", horizontal: "16px" }} gap="xsmall">
       <FormField
         label="Name of Organization *"
         required="true"
@@ -21,9 +21,11 @@ export default ({ product }) => {
       />
       <FormField label="Messages (If any)" placeholder="Input your message" />
       <input type="hidden" value={product} />
-      <Box margin={{ top: "24px" }} width={mobile ? "100%" : "25%"}>
-        <Button primary label="Contact Sales" />
-      </Box>
+      <Button
+        primary
+        label="Contact Sales"
+        alignSelf={mobile ? null : "start"}
+      />
     </Box>
   )
 }
