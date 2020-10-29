@@ -1,9 +1,8 @@
 import React from "react"
 import ReactParser, { convertNodeToElement } from "react-html-parser"
-import DOMPurify from "dompurify"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Box, Image } from "grommet"
+import { Box, Image, ResponsiveContext } from "grommet"
 import {
   FacebookShareButton,
   InstapaperShareButton,
@@ -55,19 +54,20 @@ const transform = node => {
 }
 
 export default ({ data: { post }, location }) => {
-  const url = location.href ? location.href : ""
+  const url = post.path
   const category = url.match(/(?<=\/)(.*?)(?=\/)/g)
+  const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Layout>
       <SEO title={post.name} />
-      <Box pad={{ horizontal: "268px" }}>
+      <Box pad={mobile ? { horizontal: "16px" } : { horizontal: "268px" }}>
         <Box gap="small" direction="row" pad={{ top: "32px" }}>
           <ArrowLeft color="b1" />
           <Text code="sub-r" color="b2">
             {post.createdTime}
           </Text>
           <Text code="sub-r" color="b2" style={{ textTransform: "capitalize" }}>
-            {category[2].replace("-", " ")}
+            {category[0].replace("-", " ")}
           </Text>
           <Text code="sub-r" color="b2">
             {post.childMarkdownRemark.timeToRead} mins read
@@ -83,7 +83,7 @@ export default ({ data: { post }, location }) => {
           />
         </Box>
         <Box gap="medium">
-          {ReactParser(DOMPurify.sanitize(post.childMarkdownRemark.html), {
+          {ReactParser(post.childMarkdownRemark.html, {
             transform,
           })}
         </Box>
@@ -119,6 +119,7 @@ export const query = graphql`
         html
         timeToRead
       }
+      path
       name
       createdTime(fromNow: true)
       cover {
