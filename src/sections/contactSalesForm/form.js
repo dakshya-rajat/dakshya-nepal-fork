@@ -3,7 +3,7 @@ import { Box, ResponsiveContext } from "grommet"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
 
-export default ({ title }) => {
+export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Box margin={{ vertical: "24px", horizontal: "16px" }}>
@@ -20,6 +20,7 @@ export default ({ title }) => {
         placeholder="Input your phone number"
       />
       <FormField label="Messages (If any)" placeholder="Input your message" />
+      <input type="hidden" value={product} />
       <Box margin={{ top: "24px" }} width={mobile ? "100%" : "25%"}>
         <Button primary label="Contact Sales" />
       </Box>
