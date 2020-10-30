@@ -9,6 +9,7 @@ export default props => {
         size="small"
         icon={props.icon}
         disabled={props.disabled}
+        {...props}
       />
     </FormField>
   )
