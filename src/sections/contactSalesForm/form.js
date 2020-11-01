@@ -6,6 +6,9 @@ import { Formik } from "formik"
 
 export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+  const url =
+    process.env.GATSBY_API_URL + "/api/forms/submit/productContactForm"
+  const [result, setResult] = React.useState({})
   return (
     <Box margin={{ vertical: "24px", horizontal: "16px" }} gap="xsmall">
       <Formik
@@ -17,11 +20,17 @@ export default ({ product }) => {
           message: "",
           product: product,
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+        onSubmit={async (values, { setSubmitting }) => {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Cockpit-Token": process.env.GATSBY_API_KEY,
+            },
+            body: JSON.stringify({ form: values }),
+          })
+          const json = await response.json()
+          setResult(json)
         }}
       >
         {({
