@@ -3,11 +3,15 @@ import { Box, ResponsiveContext, TextArea } from "grommet"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
 import { Formik } from "formik"
+import Notification from "../notification"
 
 export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   const url =
     process.env.GATSBY_API_URL + "/api/forms/submit/productContactForm"
+
+  const [success, setSuccess] = React.useState(false)
+  const [error, setError] = React.useState(false)
 
   return (
     <Box margin={{ vertical: "24px", horizontal: "16px" }} gap="xsmall">
@@ -30,8 +34,8 @@ export default ({ product }) => {
             body: JSON.stringify({ form: values }),
           })
 
-          if (response.ok) console.log("it works")
-          else console.log("it doesnt works")
+          if (response.ok) setSuccess(true)
+          else setError(true)
         }}
       >
         {({
@@ -110,6 +114,13 @@ export default ({ product }) => {
           </form>
         )}
       </Formik>
+      {success && <Notification message="Message Sent Successfully" />}
+      {error && (
+        <Notification
+          message="Could not send message. Please try again!"
+          error
+        />
+      )}
     </Box>
   )
 }
