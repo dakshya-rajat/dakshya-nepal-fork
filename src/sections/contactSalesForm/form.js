@@ -8,7 +8,7 @@ export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   const url =
     process.env.GATSBY_API_URL + "/api/forms/submit/productContactForm"
-  const [result, setResult] = React.useState({})
+
   return (
     <Box margin={{ vertical: "24px", horizontal: "16px" }} gap="xsmall">
       <Formik
@@ -29,8 +29,9 @@ export default ({ product }) => {
             },
             body: JSON.stringify({ form: values }),
           })
-          const json = await response.json()
-          setResult(json)
+
+          if (response.ok) console.log("it works")
+          else console.log("it doesnt works")
         }}
       >
         {({
