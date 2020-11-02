@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, ResponsiveContext, Image, Select } from "grommet"
+import { Box, ResponsiveContext, Image } from "grommet"
 import Heading from "../../components/heading"
 import FormSideImage from "../../../static/illustrations/Guidance Counseling.svg"
 import FormField from "../../components/formField"
@@ -51,7 +51,7 @@ export default props => {
           nature: "",
           available: "",
         }}
-        onSubmit={async (values, { setSubmitting }) => {
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
           const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -61,8 +61,11 @@ export default props => {
             body: JSON.stringify({ form: values }),
           })
 
-          if (response.ok) setSuccess(true)
-          else setError(true)
+          if (response.ok) {
+            setSuccess(true)
+            setSubmitting(false)
+            resetForm()
+          } else setError(true)
         }}
       >
         {({

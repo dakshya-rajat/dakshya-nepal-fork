@@ -24,7 +24,7 @@ export default ({ product }) => {
           message: "",
           product: product,
         }}
-        onSubmit={async (values, { setSubmitting }) => {
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
           const response = await fetch(url, {
             method: "POST",
             headers: {
@@ -34,8 +34,11 @@ export default ({ product }) => {
             body: JSON.stringify({ form: values }),
           })
 
-          if (response.ok) setSuccess(true)
-          else setError(true)
+          if (response.ok) {
+            setSuccess(true)
+            setSubmitting(false)
+            resetForm()
+          } else setError(true)
         }}
       >
         {({
