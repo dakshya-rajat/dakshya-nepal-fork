@@ -35,7 +35,7 @@ export default ({ info, active }) => {
           <Text code="sub-m" size="small">
             Responsibilities:
           </Text>
-          <Text code="sub-r" size="small">
+          <Text code="sub-r" size="small" color="b2">
             {info.responsibilities}
           </Text>
           <Button secondary label="Apply" alignSelf="start" />
