@@ -6,10 +6,16 @@ import FormField from "../../components/formField"
 import Button from "../../components/button"
 import Text from "../../components/text"
 import { Formik, Field } from "formik"
+import Notification from "../notification"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
-  const [value, setValue] = React.useState("")
+  const url =
+    process.env.GATSBY_API_URL + "/api/forms/submit/guidanceCounseling"
+
+  const [success, setSuccess] = React.useState(false)
+  const [error, setError] = React.useState(false)
+
   return (
     <Box
       pad={
@@ -42,12 +48,21 @@ export default props => {
           school: "",
           problems: "",
           type: "",
+          nature: "",
+          available: "",
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+        onSubmit={async (values, { setSubmitting }) => {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Cockpit-Token": process.env.GATSBY_API_KEY,
+            },
+            body: JSON.stringify({ form: values }),
+          })
+
+          if (response.ok) setSuccess(true)
+          else setError(true)
         }}
       >
         {({
@@ -70,13 +85,13 @@ export default props => {
                 <Box gap="small">
                   <Box gap="xsmall">
                     <Text size="small">Need guidance as</Text>
-                    <Select
-                      placeholder="Select one"
-                      size="small"
-                      options={["Student", "Parent"]}
-                      value={value}
-                      onChange={({ option }) => handleChange(option)}
-                    />
+                    <Field name="type" as="select">
+                      <option value="" disabled selected hidden>
+                        Select one
+                      </option>
+                      <option value="Student">Student</option>
+                      <option value="Parent">Parent</option>
+                    </Field>
                   </Box>
                   <FormField
                     label="Your Name *"
@@ -120,17 +135,14 @@ export default props => {
                     <Text size="small">
                       Nature of Counseling you are seeking
                     </Text>
-                    <Select
-                      placeholder="Select one"
-                      size="small"
-                      options={[
-                        "Academics",
-                        "Relationship",
-                        "Social Life, others",
-                      ]}
-                      value={value}
-                      onChange={({ option }) => setValue(option)}
-                    />
+                    <Field name="nature" as="select">
+                      <option value="" disabled selected hidden>
+                        Select one
+                      </option>
+                      <option value="Academics">Academics</option>
+                      <option value="Relationship">Relationship</option>
+                      <option value="Others">Social Life, others</option>
+                    </Field>
                   </Box>
                   <FormField
                     label="Describe the hardships you are facing in few words"
@@ -143,13 +155,13 @@ export default props => {
                   />
                   <Box gap="xsmall">
                     <Text size="small">Available for Counseling via</Text>
-                    <Select
-                      placeholder="Select one"
-                      size="small"
-                      options={["Phone Call", "Video Call"]}
-                      value={value}
-                      onChange={({ option }) => setValue(option)}
-                    />
+                    <Field name="available" as="select">
+                      <option value="" disabled selected hidden>
+                        Select one
+                      </option>
+                      <option value="Phone Call">Phone Call</option>
+                      <option value="Video Call">Video Call</option>
+                    </Field>
                   </Box>
                 </Box>
                 <Box width={mobile ? "100%" : "small"}>
@@ -173,6 +185,13 @@ export default props => {
           </form>
         )}
       </Formik>
+      {success && <Notification message="Message Sent Successfully" />}
+      {error && (
+        <Notification
+          message="Could not send message. Please try again!"
+          error
+        />
+      )}
     </Box>
   )
 }
