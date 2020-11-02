@@ -5,24 +5,21 @@
  */
 
 // You can delete this file if you're not using it
-const _path = require(`path`)
+function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+    .replace(/\-\-+/g, "-") // Replace multiple - with single -
+    .replace(/^-+/, "") // Trim - from start of text
+    .replace(/-+$/, "") // Trim - from end of text
+}
 
-exports.createPages = async ({ graphql, actions }) =>
-  graphql(
-    `
-      {
-        allGoogleDocs {
-          nodes {
-            path
-          }
-        }
-      }
-    `
-  ).then(result => {
-    result.data.allGoogleDocs.nodes.forEach(({ path }, index) => {
-      actions.createPage({
-        path: path,
-        component: _path.resolve(`./src/templates/blog.js`),
-      })
-    })
-  })
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `CockpitBlog`) {
+    const slug = `/${slugify(node.category.value)}/${slugify(node.title.value)}`
+    createNodeField({ node, name: `path`, value: slug })
+  }
+}
