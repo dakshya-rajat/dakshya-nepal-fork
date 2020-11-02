@@ -1,10 +1,9 @@
 import React from "react"
 import { Box, ResponsiveContext, Image } from "grommet"
 import Heading from "../../components/heading"
-import FormSideImage from "../../../static/illustrations/Qubex.svg"
 import Form from "./form"
 
-export default ({ title }) => {
+export default ({ title, image, product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Box
@@ -22,15 +21,16 @@ export default ({ title }) => {
         round="8px"
       >
         <Box width={mobile ? "100%" : "50%"}>
-          <Form />
+          <Form product={product} />
         </Box>
         <Box
-          width={mobile ? "0%" : "50%"}
           background="p1-l"
-          alignContent="end"
+          pad={{ horizontal: "medium" }}
+          style={{ display: mobile ? "none" : "flex" }}
+          flex="grow"
           justify="end"
         >
-          <Image src={FormSideImage} fill="horizontal" />
+          <Image src={image} fill="horizontal" />
         </Box>
       </Box>
     </Box>

@@ -7,13 +7,18 @@ import ProductShowcase from "../../sections/kalam-cms/productShowcase"
 import ContactSalesForm from "../../sections/contactSalesForm"
 
 export default () => {
+  const product = "Kalam CMS"
   return (
     <Layout active="products">
-      <SEO title="Kalam CMS" />
+      <SEO title={product} />
       <ProductHeading />
       <KalamFeatures />
       <ProductShowcase />
-      <ContactSalesForm title="Contact Sales Form" />
+      <ContactSalesForm
+        title="Contact Sales Form"
+        product={product}
+        image="/illustrations/CMS.svg"
+      />
     </Layout>
   )
 }

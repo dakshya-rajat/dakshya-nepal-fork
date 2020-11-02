@@ -8,14 +8,19 @@ import WorkFlowSection from "../../sections/smart-school/workFlowSection"
 import DemoVideos from "../../sections/smart-school/demoVideosSection"
 
 export default () => {
+  const product = "SmartSchool"
   return (
     <Layout active="products">
-      <SEO title="SmartSchool" />
+      <SEO title={product} />
       <ProductHeading />
       <ProductShowcase />
       <WorkFlowSection />
       <DemoVideos />
-      <ContactSalesForm title="Lets start learning with Study'n'Learn" />
+      <ContactSalesForm
+        title="Lets start learning with Study'n'Learn"
+        product={product}
+        image="/illustrations/Girl on a chair.svg"
+      />
     </Layout>
   )
 }

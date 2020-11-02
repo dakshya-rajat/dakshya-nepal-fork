@@ -21,7 +21,7 @@ export default ({ mobile }) => {
     showNav: false,
     customPaging: function (i) {
       return (
-        <a>
+        <a href="#blank">
           <Dot key={i} />
         </a>
       )
