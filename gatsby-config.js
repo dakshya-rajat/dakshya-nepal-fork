@@ -45,6 +45,23 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: "@fika/gatsby-source-cockpit",
+      options: {
+        token: process.env.GATSBY_API_KEY,
+        baseUrl: process.env.GATSBY_API_URL,
+        locales: ["en"],
+        collections: [],
+        singletons: [],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
