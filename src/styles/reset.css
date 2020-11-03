@@ -92,3 +92,12 @@ select:focus {
 .blogPost p em {
     font-style: italic;
 }
+
+.noScrollBar::-webkit-scrollbar {
+    display: none;
+}
+
+.noScrollBar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
