@@ -20,10 +20,10 @@ import Twitter from "../components/icons/twitter"
 import Instagram from "../components/icons/instagram"
 import Linkedin from "../components/icons/linkedin"
 
-export default ({ data: { post } }) => {
-  const url = post.fields.path
-
+export default ({ data: { post }, location }) => {
+  const url = location ? location.href : ""
   const mobile = React.useContext(ResponsiveContext) === "small"
+
   return (
     <Layout>
       <SEO title={post.name} />
