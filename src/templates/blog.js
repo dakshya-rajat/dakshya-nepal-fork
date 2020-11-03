@@ -1,8 +1,7 @@
 import React from "react"
-import ReactParser, { convertNodeToElement } from "react-html-parser"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Box, Image, ResponsiveContext } from "grommet"
+import { Box, ResponsiveContext } from "grommet"
 import {
   FacebookShareButton,
   InstapaperShareButton,
@@ -21,41 +20,9 @@ import Twitter from "../components/icons/twitter"
 import Instagram from "../components/icons/instagram"
 import Linkedin from "../components/icons/linkedin"
 
-const transform = node => {
-  if (node.name === "p") {
-    if (node.children[0].name === "strong") {
-      return <Text weight="bold">{node.children[0].children[0].data}</Text>
-    } else if (node.children[0].name === "em") {
-      return (
-        <Box direction="row" gap="small">
-          <Image src="/images/quotation.svg" alignSelf="start" />
-          <Text as="blockquote">
-            <span
-              style={{
-                fontStyle: "italic",
-                backgroundColor: "#ffd749",
-                lineHeight: "35px",
-                padding: "5px",
-              }}
-            >
-              {node.children[0].children[0].data}
-            </span>
-          </Text>
-        </Box>
-      )
-    } else if (node.children[0].name === "span") {
-      const image = node.children[0]
-      image.attribs.style = image.attribs.style.replace("650px", "100%")
-      convertNodeToElement(image)
-      return
-    }
-    return <Text>{node.children[0].data}</Text>
-  }
-}
+export default ({ data: { post } }) => {
+  const url = post.fields.path
 
-export default ({ data: { post }, location }) => {
-  const url = post.path
-  const category = url.match(/(?<=\/)(.*?)(?=\/)/g)
   const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Layout>
@@ -64,28 +31,31 @@ export default ({ data: { post }, location }) => {
         <Box gap="small" direction="row" pad={{ top: "32px" }}>
           <ArrowLeft color="b1" />
           <Text code="sub-r" color="b2">
-            {post.createdTime}
+            {post.cockpitCreated}
           </Text>
           <Text code="sub-r" color="b2" style={{ textTransform: "capitalize" }}>
-            {category[0].replace("-", " ")}
+            {post.category.value}
           </Text>
           <Text code="sub-r" color="b2">
-            {post.childMarkdownRemark.timeToRead} mins read
+            {post.timeToRead.value} mins read
           </Text>
         </Box>
         <Heading code={3} margin={{ top: "16px", bottom: "24px" }}>
-          {post.name}
+          {post.title.value}
         </Heading>
         <Box pad={{ bottom: "24px" }}>
           <Img
-            fluid={post.cover.image.childImageSharp.fluid}
+            fluid={post.coverImage.value.childImageSharp.fluid}
             style={{ borderRadius: "4px" }}
           />
         </Box>
         <Box gap="medium">
-          {ReactParser(post.childMarkdownRemark.html, {
-            transform,
-          })}
+          <div
+            className="blogPost"
+            dangerouslySetInnerHTML={{
+              __html: post.content.value.childMarkdownRemark.html,
+            }}
+          />
         </Box>
         <Box
           flex="grow"
@@ -114,16 +84,29 @@ export default ({ data: { post }, location }) => {
 
 export const query = graphql`
   query($path: String) {
-    post: googleDocs(path: { eq: $path }) {
-      childMarkdownRemark {
-        html
-        timeToRead
+    post: cockpitBlog(lang: { eq: "en" }, fields: { path: { eq: $path } }) {
+      fields {
+        path
       }
-      path
-      name
-      createdTime(fromNow: true)
-      cover {
-        image {
+      title {
+        value
+      }
+      category {
+        value
+      }
+      content {
+        value {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      cockpitCreated(fromNow: true)
+      timeToRead {
+        value
+      }
+      coverImage {
+        value {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
