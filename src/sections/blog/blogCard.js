@@ -5,8 +5,7 @@ import Img from "gatsby-image"
 import Text from "../../components/text"
 import Heading from "../../components/heading"
 
-export default ({ mobile, title, image, minRead, link }) => {
-  const category = link.match(/(?<=\/)(.*?)(?=\/)/g)
+export default ({ mobile, title, image, minRead, link, category }) => {
   return (
     <Box width={mobile ? "98%" : "33.33%"} round="4px" border={{ color: "w2" }}>
       <Link style={{ textDecoration: "none", color: "inherit" }} to={link}>
@@ -25,7 +24,7 @@ export default ({ mobile, title, image, minRead, link }) => {
                 alignSelf="end"
                 style={{ textTransform: "capitalize" }}
               >
-                #{category[0].replace("-", " ")}
+                #{category}
               </Text>
             </Box>
           </Box>

@@ -71,3 +71,24 @@ select:focus {
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
     border: 2px solid #2F80ED;
 }
+
+.blogPost p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.blogPost p strong {
+    font-weight: bold;
+}
+
+.blogPost p img {
+    min-width: 100%;
+}
+
+.blogPost p em {
+    font-style: italic;
+}

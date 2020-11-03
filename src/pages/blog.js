@@ -17,18 +17,27 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allGoogleDocs {
-      nodes {
-        name
-        path
-        childMarkdownRemark {
-          timeToRead
-        }
-        cover {
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+    allCockpitBlog(filter: { lang: { eq: "en" } }) {
+      edges {
+        node {
+          fields {
+            path
+          }
+          title {
+            value
+          }
+          category {
+            value
+          }
+          timeToRead {
+            value
+          }
+          coverImage {
+            value {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }

@@ -50,8 +50,7 @@ export default ({ mobile }) => {
           <ProductCard
             product={product}
             key={index}
-            height={mobile ? "287px" : "308px"}
-            width={mobile ? "medium" : "352px"}
+            width="medium"
             margin={mobile ? { right: "24px" } : { left: "24px" }}
           />
         ))}

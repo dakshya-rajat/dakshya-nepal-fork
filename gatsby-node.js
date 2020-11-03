@@ -5,24 +5,46 @@
  */
 
 // You can delete this file if you're not using it
-const _path = require(`path`)
+const path = require("path")
 
-exports.createPages = async ({ graphql, actions }) =>
-  graphql(
-    `
-      {
-        allGoogleDocs {
-          nodes {
-            path
+function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-") // Replace spaces with -
+    .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+    .replace(/\-\-+/g, "-") // Replace multiple - with single -
+    .replace(/^-+/, "") // Trim - from start of text
+    .replace(/-+$/, "") // Trim - from end of text
+}
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `CockpitBlog`) {
+    const slug = `/${slugify(node.category.value)}/${slugify(node.title.value)}`
+    createNodeField({ node, name: `path`, value: slug })
+  }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allCockpitBlog(filter: { lang: { eq: "en" } }) {
+        edges {
+          node {
+            fields {
+              path
+            }
           }
         }
       }
-    `
-  ).then(result => {
-    result.data.allGoogleDocs.nodes.forEach(({ path }, index) => {
-      actions.createPage({
-        path: path,
-        component: _path.resolve(`./src/templates/blog.js`),
-      })
+    }
+  `)
+  result.data.allCockpitBlog.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.path,
+      component: path.resolve(`./src/templates/blog.js`),
     })
   })
+}
