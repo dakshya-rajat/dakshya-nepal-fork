@@ -17,6 +17,7 @@
     "gatsby-plugin-sharp": "^2.6.28",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.25",
+    "gatsby-transformer-remark": "^2.9.0",
     "gatsby-transformer-sharp": "^2.5.13",
     "grommet": "^2.15.0",
     "grommet-icons": "^4.4.0",
