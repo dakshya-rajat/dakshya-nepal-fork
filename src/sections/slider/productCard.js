@@ -34,7 +34,7 @@ export default ({ product, height, width, margin }) => {
         pad={{ top: "medium" }}
         round={{ corner: "bottom", size: "8px" }}
       >
-        <Image src={product.image} fill="vertical" />
+        <Image src={product.image} fit="contain" fill="vertical" />
       </Box>
     </Box>
   )
