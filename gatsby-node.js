@@ -5,6 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+const path = require("path")
+
 function slugify(text) {
   return text
     .toString()
@@ -22,4 +24,27 @@ exports.onCreateNode = ({ node, actions }) => {
     const slug = `/${slugify(node.category.value)}/${slugify(node.title.value)}`
     createNodeField({ node, name: `path`, value: slug })
   }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allCockpitBlog(filter: { lang: { eq: "en" } }) {
+        edges {
+          node {
+            fields {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+  result.data.allCockpitBlog.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.path,
+      component: path.resolve(`./src/templates/blog.js`),
+    })
+  })
 }
