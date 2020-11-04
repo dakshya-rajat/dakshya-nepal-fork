@@ -4,7 +4,7 @@ import Heading from "../../../components/heading"
 import Button from "../../../components/button"
 
 import products from "../../../content/products.json"
-import Card from "../../productList/card"
+import HeaderCard from "./headerCard"
 
 import chevUp from "../../../components/icons/chevron-up"
 import chevDown from "../../../components/icons/chevron-down"
@@ -31,11 +31,11 @@ export default props => {
           <Button alignSelf="end" primary label="Know More" />
         </Box>
       </Box>
-      <Box width="100%">
+      <Box width="100%" elevation="header">
         <Collapsible open={open} {...props}>
           <Grid columns="31%" gap="medium" pad={{ top: "24px" }}>
-            {products.map((product, index) => (
-              <Card product={product} key={index} />
+            {products.map((data, index) => (
+              <HeaderCard product={data} key={index} />
             ))}
           </Grid>
         </Collapsible>
