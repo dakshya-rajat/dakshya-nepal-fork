@@ -4,9 +4,17 @@ import Heading from "../../components/heading"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
 import Exit from "../../components/icons/exit"
+import { Formik } from "formik"
+import Notification from "../notification"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+
+  const url = process.env.GATSBY_API_URL + "/api/forms/submit/jobApplication"
+
+  const [success, setSuccess] = React.useState(false)
+  const [error, setError] = React.useState(false)
+
   return (
     <Layer
       animation="slide"
@@ -28,44 +36,111 @@ export default props => {
             ) : null}
           </Box>
           <Heading code={3}>Apply for a position</Heading>
-          <form>
-            <FormField label="Your Name *" placeholder="Jane Doe" type="text" />
-            <FormField
-              label="Your Email*"
-              placeholder="email@domain.com"
-              type="text"
+          <Formik
+            initialValues={{
+              name: "",
+              email: "",
+              message: "",
+              driveUrl: "",
+              position: props.position,
+            }}
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Cockpit-Token": process.env.GATSBY_API_KEY,
+                },
+                mode: "cors",
+                body: JSON.stringify({ form: values }),
+              })
+
+              console.log(response)
+
+              if (response.ok) {
+                setSuccess(true)
+                setSubmitting(false)
+                resetForm()
+              } else setError(true)
+            }}
+          >
+            {({
+              values,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              /* and other goodies */
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <FormField
+                  label="Your Name *"
+                  placeholder="Jane Doe"
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.name}
+                  required={true}
+                />
+                <FormField
+                  label="Your Email*"
+                  placeholder="email@domain.com"
+                  type="text"
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.email}
+                  required={true}
+                />
+                <label
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "normal",
+                  }}
+                  htmlFor="message"
+                >
+                  Messages (If any)
+                </label>
+                <TextArea
+                  placeholder="Input your message"
+                  size="small"
+                  name="message"
+                  style={{ border: "2px solid #EAEAEA" }}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.message}
+                />
+                <FormField
+                  label="Your Resume Link *"
+                  placeholder="Google Drive Link"
+                  type="text"
+                  name="driveUrl"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.driveUrl}
+                  required={true}
+                />
+                <input type="hidden" name="position" value={values.position} />
+                <Box pad={{ top: "small" }}>
+                  <Button
+                    type="submit"
+                    alignSelf="start"
+                    primary
+                    label="Submit"
+                    disabled={isSubmitting}
+                  />
+                </Box>
+              </form>
+            )}
+          </Formik>
+          {success && <Notification message="Message Sent Successfully" />}
+          {error && (
+            <Notification
+              message="Could not send message. Please try again!"
+              error
             />
-            <label
-              style={{
-                fontSize: "14px",
-                lineHeight: "normal",
-              }}
-              htmlFor="message"
-            >
-              Messages (If any)
-            </label>
-            <TextArea
-              placeholder="Input your message"
-              size="small"
-              name="message"
-              style={{ border: "2px solid #EAEAEA" }}
-            />
-            <Box gap="xsmall">
-              <label
-                style={{
-                  fontSize: "14px",
-                  lineHeight: "normal",
-                }}
-                htmlFor="resume"
-              >
-                Your Resume
-              </label>
-              <input type="file" name="resume" />
-            </Box>
-            <Box pad={{ top: "small" }}>
-              <Button alignSelf="start" primary label="Submit" />
-            </Box>
-          </form>
+          )}
         </Box>
         {mobile ? null : (
           <Box background="p1-l" width="50%">
