@@ -11,6 +11,12 @@ import ApplyJob from "../../sections/applyJob"
 export default ({ info, active }) => {
   const [open, setOpen] = React.useState(active)
   const [apply, setApply] = React.useState(false)
+  const [position, setPosition] = React.useState("")
+
+  const openForm = position => {
+    setPosition(position)
+    setApply(true)
+  }
 
   const Icon = open ? chevUp : chevDown
 
@@ -48,12 +54,12 @@ export default ({ info, active }) => {
               secondary
               label="Apply"
               alignSelf="start"
-              onClick={() => setApply(true)}
+              onClick={() => openForm(info.position.value)}
             />
           </Box>
         </Collapsible>
       </Box>
-      {apply && <ApplyJob setApply={setApply} />}
+      {apply && <ApplyJob setApply={setApply} position={position} />}
     </>
   )
 }
