@@ -4,9 +4,16 @@ import Heading from "../../components/heading"
 import Card from "../../components/card"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
+import { Formik } from "formik"
+import Notification from "../notification"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+  const url = process.env.GATSBY_API_URL + "/api/forms/submit/emailSubscriber"
+
+  const [success, setSuccess] = React.useState(false)
+  const [error, setError] = React.useState(false)
+
   return (
     <Box
       pad={
@@ -29,14 +36,75 @@ export default props => {
         <Heading code={4}>
           Subscribe to our news letter for blogs, news and updates.
         </Heading>
-        <Box direction={mobile ? "column" : "row"} gap="small" flex="grow">
-          <Box flex="grow">
-            <FormField placeholder="Your Email" />
-          </Box>
-          <Box>
-            <Button primary label="Send me updates" />
-          </Box>
-        </Box>
+        <Formik
+          initialValues={{
+            email: "",
+            for: "Email Updates",
+          }}
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
+            const response = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Cockpit-Token": process.env.GATSBY_API_KEY,
+              },
+              mode: "cors",
+              body: JSON.stringify({ form: values }),
+            })
+
+            console.log(response)
+
+            if (response.ok) {
+              setSuccess(true)
+              setSubmitting(false)
+              resetForm()
+            } else setError(true)
+          }}
+        >
+          {({
+            values,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+            /* and other goodies */
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <Box
+                direction={mobile ? "column" : "row"}
+                gap="small"
+                flex="grow"
+              >
+                <Box>
+                  <FormField
+                    placeholder="Your Email"
+                    name="email"
+                    type="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.email}
+                    required={true}
+                  />
+                </Box>
+                <Box>
+                  <Button
+                    primary
+                    disabled={isSubmitting}
+                    label="Send me updates"
+                    type="submit"
+                  />
+                </Box>
+              </Box>
+            </form>
+          )}
+        </Formik>
+        {success && <Notification message="Message Sent Successfully" />}
+        {error && (
+          <Notification
+            message="Could not send message. Please try again!"
+            error
+          />
+        )}
       </Card>
     </Box>
   )

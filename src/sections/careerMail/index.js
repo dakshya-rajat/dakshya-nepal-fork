@@ -3,9 +3,16 @@ import { Box, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
+import { Formik } from "formik"
+import Notification from "../notification"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+
+  const url = process.env.GATSBY_API_URL + "/api/forms/submit/emailSubscriber"
+
+  const [success, setSuccess] = React.useState(false)
+  const [error, setError] = React.useState(false)
 
   return (
     <Box
@@ -29,12 +36,80 @@ export default props => {
             get a reminder for these positions if they are open again.
           </Heading>
         </Box>
-        <Box direction={mobile ? "column" : "row"} gap="small" flex="grow">
-          <FormField placeholder="Select a position" flex="grow" />
-          <FormField placeholder="Your E-mail" flex="grow" />
-          <Button primary label="Remind Me" />
+        <Box flex="grow">
+          <Formik
+            initialValues={{
+              email: "",
+              position: "",
+              for: "Job Updates",
+            }}
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Cockpit-Token": process.env.GATSBY_API_KEY,
+                },
+                mode: "cors",
+                body: JSON.stringify({ form: values }),
+              })
+
+              console.log(response)
+
+              if (response.ok) {
+                setSuccess(true)
+                setSubmitting(false)
+                resetForm()
+              } else setError(true)
+            }}
+          >
+            {({
+              values,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              /* and other goodies */
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <Box direction={mobile ? "column" : "row"} gap="small">
+                  <FormField
+                    placeholder="Select a position"
+                    flex="grow"
+                    name="position"
+                    required={true}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.position}
+                  />
+                  <FormField
+                    placeholder="Your E-mail"
+                    flex="grow"
+                    name="email"
+                    required={true}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    values={values.email}
+                  />
+                  <Button
+                    primary
+                    disabled={isSubmitting}
+                    label="Remind Me"
+                    type="submit"
+                  />
+                </Box>
+              </form>
+            )}
+          </Formik>
         </Box>
       </Box>
+      {success && <Notification message="Message Sent Successfully" />}
+      {error && (
+        <Notification
+          message="Could not send message. Please try again!"
+          error
+        />
+      )}
     </Box>
   )
 }
