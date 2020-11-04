@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Collapsible, Grid } from "grommet"
+import { Box, Collapsible, Grid, ResponsiveContext } from "grommet"
 import Heading from "../../../components/heading"
 import Button from "../../../components/button"
 
@@ -12,6 +12,9 @@ import chevDown from "../../../components/icons/chevron-down"
 export default props => {
   const [open, setOpen] = React.useState(false)
   const Icon = open ? chevUp : chevDown
+  const mobile = React.useContext(ResponsiveContext) === "small"
+  let name = props.link.match("[^/]+$")
+  name = name[0].replace("-", " ")
 
   return (
     <>
@@ -22,8 +25,12 @@ export default props => {
         pad={{ top: "12px" }}
       >
         <Box direction="row" alignSelf="center" onClick={() => setOpen(!open)}>
-          <Heading code={4} size="small">
-            Smart School
+          <Heading
+            code={4}
+            size="small"
+            style={{ textTransform: "capitalize" }}
+          >
+            {name}
           </Heading>
           <Icon color="b1" />
         </Box>
@@ -31,9 +38,13 @@ export default props => {
           <Button alignSelf="end" primary label="Know More" />
         </Box>
       </Box>
-      <Box width="100%" elevation="header">
+      <Box width="100%">
         <Collapsible open={open} {...props}>
-          <Grid columns="31%" gap="medium" pad={{ top: "24px" }}>
+          <Grid
+            columns={mobile ? "100%" : "31%"}
+            gap="medium"
+            pad={{ top: "24px" }}
+          >
             {products.map((data, index) => (
               <HeaderCard product={data} key={index} />
             ))}
