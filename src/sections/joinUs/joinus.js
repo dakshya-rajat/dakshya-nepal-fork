@@ -3,8 +3,11 @@ import { Box, Image } from "grommet"
 import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
+import ApplyJob from "../applyJob"
 
 export default ({ data, mobile }) => {
+  const [apply, setApply] = React.useState(false)
+
   return (
     <Box
       direction={mobile ? "column" : "row"}
@@ -31,8 +34,19 @@ export default ({ data, mobile }) => {
         <Text code="subtext-r" size="small" color="b2">
           {data.desc}
         </Text>
-        <Button secondary label="Apply" alignSelf="start" />
+        <Button
+          secondary
+          label="Apply"
+          alignSelf="start"
+          onClick={() => setApply(true)}
+        />
       </Box>
+      {apply && (
+        <ApplyJob
+          setApply={setApply}
+          position={data.title.replace("Join as ", "")}
+        />
+      )}
     </Box>
   )
 }
