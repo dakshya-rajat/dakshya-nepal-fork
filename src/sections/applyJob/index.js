@@ -1,21 +1,32 @@
 import React from "react"
-import { Box, Image, Layer, TextArea } from "grommet"
+import { Box, Image, Layer, TextArea, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
 import Exit from "../../components/icons/exit"
 
 export default props => {
+  const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Layer
       animation="slide"
       position="center"
       onClickOutside={() => props.setApply(false)}
       onEsc={() => props.setApply(false)}
+      modal={true}
     >
-      <Box direction="row" width="large" elevation="d1">
-        <Box pad="24px" gap="medium" width="50%">
-          <Image alignSelf="start" src="/images/logo-horizontal.svg" />
+      <Box direction="row" elevation="d1" align="center">
+        <Box pad="24px" gap="medium" width={mobile ? "100%" : "50%"}>
+          <Box direction="row">
+            <Image alignSelf="start" src="/images/logo-horizontal.svg" />
+            {mobile ? (
+              <Box flex="grow" alignContent="end">
+                <Box onClick={() => props.setApply(false)} alignSelf="end">
+                  <Exit />
+                </Box>
+              </Box>
+            ) : null}
+          </Box>
           <Heading code={3}>Apply for a position</Heading>
           <form>
             <FormField label="Your Name *" placeholder="Jane Doe" type="text" />
@@ -56,17 +67,19 @@ export default props => {
             </Box>
           </form>
         </Box>
-        <Box background="p1-l" width="50%" justify="end">
-          <Box
-            style={{ position: "absolute", top: "24px", right: "24px" }}
-            onClick={() => props.setApply(false)}
-          >
-            <Exit />
+        {mobile ? null : (
+          <Box background="p1-l" width="50%">
+            <Box
+              style={{ position: "absolute", top: "24px", right: "24px" }}
+              onClick={() => props.setApply(false)}
+            >
+              <Exit />
+            </Box>
+            <Box height="570px">
+              <Image src="/illustrations/guidance form.svg" fit="cover" />
+            </Box>
           </Box>
-          <Box height="medium" alignSelf="end">
-            <Image src="/illustrations/guidance form.svg" fit="contain" />
-          </Box>
-        </Box>
+        )}
       </Box>
     </Layer>
   )
