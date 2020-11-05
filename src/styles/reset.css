@@ -93,6 +93,11 @@ select:focus {
     font-style: italic;
 }
 
+.blogPost blockquote p span {
+    font-style: italic;
+    background: #ffd749;
+}
+
 .noScrollBar::-webkit-scrollbar {
     display: none;
 }
