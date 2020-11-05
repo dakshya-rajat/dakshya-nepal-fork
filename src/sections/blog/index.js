@@ -4,6 +4,7 @@ import { Box, ResponsiveContext, Grid } from "grommet"
 import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
+import ComponentSlider from "../componentSlider"
 
 export default ({ title, url, data }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -20,28 +21,29 @@ export default ({ title, url, data }) => {
   )
 
   return (
-    <Box
-      pad={
-        mobile
-          ? { top: "28px", horizontal: "16px" }
-          : { top: "40px", horizontal: "131px" }
-      }
-    >
-      <Box direction="row">
-        <Heading code={2}>{title}</Heading>
-        <Box flex="grow">
-          {url ? (
-            <Box alignSelf="end">
-              <Link to={url}>
-                <Button secondary label="view all" />
-              </Link>
-            </Box>
-          ) : null}
+    <Box>
+      <Box
+        pad={
+          mobile
+            ? { top: "28px", horizontal: "16px" }
+            : { top: "40px", horizontal: "131px" }
+        }
+      >
+        <Box direction="row">
+          <Heading code={2}>{title}</Heading>
+          <Box flex="grow">
+            {url ? (
+              <Box alignSelf="end">
+                <Link to={url}>
+                  <Button secondary label="view all" />
+                </Link>
+              </Box>
+            ) : null}
+          </Box>
         </Box>
       </Box>
-      <Grid
+      <ComponentSlider
         margin={mobile ? { top: "16px" } : { top: "48px" }}
-        columns={mobile ? "32%" : "100%"}
         gap="small"
       >
         {blogPosts.map((post, index) => (
@@ -55,7 +57,7 @@ export default ({ title, url, data }) => {
             link={post.link}
           />
         ))}
-      </Grid>
+      </ComponentSlider>
     </Box>
   )
 }

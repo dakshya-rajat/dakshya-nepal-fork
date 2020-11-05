@@ -9,7 +9,7 @@ export default ({ mobile, title, image, minRead, link, category }) => {
   return (
     <Box width={mobile ? "98%" : "33.33%"} round="4px" border={{ color: "w2" }}>
       <Link style={{ textDecoration: "none", color: "inherit" }} to={link}>
-        <Box>
+        <Box height="small">
           <Img fluid={image} alt={title} />
         </Box>
         <Box pad={{ horizontal: "16px", top: "16px", bottom: "40px" }}>
