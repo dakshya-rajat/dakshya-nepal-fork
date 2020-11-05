@@ -17,14 +17,12 @@ export default props => {
         Smarter way to study with SmartSchool/Study'n'Learn
       </Heading>
       <Text margin={{ top: "16px" }} color="b2" code="sub-r">
-        Viverra turpis neque massa est erat felis lectus rhoncus magnis. Rutrum
-        quam arcu habitant est. Condimentum sed enim est, fermentum id egestas.
-        Amet, eget neque aliquet ultricies ac nibh elementum velit et.
-        Adipiscing quis dolor felis vitae viverra elit a in. Nam consequat nulla
-        cursus donec faucibus nunc massa in. Quisque tincidunt netus in
-        consequat risus dignissim morbi. Vulputate sit tempus, tincidunt sit.
-        Ridiculus aenean scelerisque eu, in nisi. Facilisis mattis netus
-        consectetur ipsum nec quam.
+        An eLearning package containing curriculum mapped K-12 digital content
+        supported by robust assessment software - Examguru integrated on an
+        advanced offline/online LMS. With over 50,000 modules mapped to school
+        curriculum, the software is the best tool to ensure that students learn
+        things at their own pace with interactive modules to get better
+        understanding on the subject matter.
       </Text>
     </Box>
   )
