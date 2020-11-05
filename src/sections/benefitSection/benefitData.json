@@ -2,12 +2,12 @@
   {
     "image": "images/benefit-parent.svg",
     "title": "Benefits for Parents",
-    "benefits": ["Engaging, interactive and fun learning sessions", "Accessible anywhere, anytime as per student’s needs", "Increased retention rates upto 60%", "Consistency in learning Enables personalization", "Possible to catre to individual needs"]
+    "benefits": ["Consistency in learning","Enables personalization","Increased retention rates upto 60%","Possible to cater to individual needs","Engaging, interactive and fun learning sessions","Accessible anywhere, anytime as per student’s needs"]
   },
   {
     "image": "images/benefit-student.svg",
     "title": "Benefits for Children",
-    "benefits": ["Flexible schedule and convenience", "Cost effective solution", "Easier to manage time for children", "Learning from the best teachers", "Responsibility and self discipline induced in child", "Updated content along with quick lesson delivery"]
+    "benefits": ["Cost effective solution","Learning from the best teachers","Easier to manage time for children","Flexible schedule and convenience","Responsibility and self discipline induced in child","Updated content along with quick lesson delivery"]
   }
 ]
 

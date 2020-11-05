@@ -1,58 +1,51 @@
 [
   {
-    "image": "images/team/blank.png",
+    "image": "images/team/vivek.jpeg",
     "name": "Vivek Tatar",
     "position": "Executive Director",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/vivek-tater-a468771b3/",
+    "email": "mailto:vivek@tater-group.com"
   },
   {
     "image": "images/team/amrita.png",
     "name": "Amrita Jha",
     "position": "CFO",
-    "linkedin": "#",
-    "email": "mailto:#"
-  },
-  {
-    "image": "images/team/deep.png",
-    "name": "Deep Rajkarnikar",
-    "position": "COO",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/amrita-jha-687876198",
+    "email": "mailto:amrita.jha@dakshyanepal.com"
   },
   {
     "image": "images/team/rajat.png",
     "name": "Rajat Bhattarai",
     "position": "Head of Technoogy",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/bhattarairajat/",
+    "email": "mailto::rajat.bhattarai@dakshyanepal.com"
   },
   {
     "image": "images/team/shruti.png",
     "name": "Shruti Jha",
     "position": "Program Head",
-    "linkedin": "#",
-    "email": "mailto:#"
-  },
-  {
-    "image": "images/team/mansi.png",
-    "name": "Mansi Thakur",
-    "position": "Social Media Manager",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/shruti-jha-13171ab8/",
+    "email": "mailto:shruti.jha@dakshyanepal.com"
   },
   {
     "image": "images/team/srijan.png",
     "name": "Shrijan Dongol",
     "position": "Product Consultant",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/shrijandongol",
+    "email": "mailto:shrijandongol@gmail.com"
   },
   {
-    "image": "images/team/blank.png",
+    "image": "images/team/yogendra.jpeg",
+    "name": "Yogendra Rawal",
+    "position": "Developer",
+    "linkedin": "https://www.linkedin.com/in/yogendra-rawal-a5450186/",
+    "email": "mailto:yogendra.rawal@dakshyanepal.com"
+  },
+  {
+    "image": "images/team/rakesh.jpeg",
     "name": "Rakesh Sah",
     "position": "Developer Intern",
-    "linkedin": "#",
-    "email": "mailto:#"
+    "linkedin": "https://www.linkedin.com/in/rakesh-sah-a3ab14147/",
+    "email": "mailto:rakesh.sah@dakshyanepal.com"
   }
 ]

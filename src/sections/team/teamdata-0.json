@@ -1,18 +1,18 @@
 [
   {
-    "image": "images/team/blank.png",
+    "image": "images/team/vishal.jpeg",
     "name": "Vishal Tatar",
     "position": "Chairman",
-    "linkedin": "#",
-    "email": "mailto:#",
+    "linkedin": "https://www.linkedin.com/in/vishal-tater-634a3565/",
+    "email": "mailto:vishal.tater@gmail.com",
     "desc": "Learning should not be restrictive, learning should always focus on the overall development of a child. It should be fun and engaging and at the same time, help a child explore his innovativeness. Dakshya Nepal plans on becoming the largest digital educator of Nepal and we are here to join hands with you to be the best."
   },
   {
     "image": "images/team/avishek.png",
     "name": "Abhishek Jha",
     "position": "Founder and CEO",
-    "linkedin": "#",
-    "email": "mailto:#",
+    "linkedin": "https://www.linkedin.com/in/jha-abhi",
+    "email": "mailto:abhishek.jha@dakshyanepal.com",
     "desc": "Learning should not be restrictive, learning should always focus on the overall development of a child. It should be fun and engaging and at the same time, help a child explore his innovativeness. Dakshya Nepal plans on becoming the largest digital educator of Nepal and we are here to join hands with you to be the best."
   }
 ]
