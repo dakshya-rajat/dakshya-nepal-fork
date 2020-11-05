@@ -43,7 +43,7 @@ export default props => {
             ) : null}
           </Box>
           <Heading margin={{ top: "medium" }} code={3}>
-            Apply for Consultant
+            Apply for counselor
           </Heading>
           <Formik
             initialValues={{

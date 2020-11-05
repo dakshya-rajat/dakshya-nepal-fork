@@ -7,6 +7,7 @@ module.exports = {
     title: `Dakshya Nepal`,
     description: `We Believe In Skilled Nepal`,
     author: `@dakshyanepal`,
+    socialImage: "/images/social.png",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -50,6 +51,16 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-6HJYQP9MW0",
+        head: false,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+        defer: false,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

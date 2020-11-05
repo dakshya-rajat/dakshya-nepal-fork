@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Box, ResponsiveContext, Grid } from "grommet"
+import { Box, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
