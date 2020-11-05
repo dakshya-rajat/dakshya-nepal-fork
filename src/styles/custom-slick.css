@@ -23,6 +23,6 @@ li.slick-active {
     width: 20px;
 }
 
-li.slick-active .dqUIUD {
+li.slick-active div {
     background: black;
 }
