@@ -18,7 +18,6 @@ import InfoBlock from "./infoBlock"
 import FooterBlock from "./footerBlock"
 import CollapsibleMenu from "./collapsibleMenu"
 import MapBox from "../../mapBox"
-import { Link } from "gatsby"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -36,18 +35,25 @@ export default props => {
           <Image src={LogoHoriWhite} alignSelf="start" />
         </Box>
         <Box direction="row" gap="small">
-          <a href="https://www.facebook.com/dakshyanepal" target="_blank">
+          <a
+            href="https://www.facebook.com/dakshyanepal"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Facebook />
           </a>
-          <a href="#">
-            <Twitter />
-          </a>
-          <a href="https://www.instagram.com/dakshyanepal/" target="_blank">
+          <Twitter />
+          <a
+            href="https://www.instagram.com/dakshyanepal/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Instagram />
           </a>
           <a
-            href={"https://www.linkedin.com/company/dakshya-nepal/"}
+            href="https://www.linkedin.com/company/dakshya-nepal/"
             target="_blank"
+            rel="noreferrer"
           >
             <LinkedIn />
           </a>
