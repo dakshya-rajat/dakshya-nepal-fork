@@ -37,10 +37,10 @@ export default ({ marginBottom }) => {
             <Image src="/illustrations/Careers.svg" />
           </Box>
           <Box
-            alignSelf="center"
             gap="small"
             pad={mobile ? { horizontal: "16px", bottom: "16px" } : null}
             width={mobile ? "100%" : "large"}
+            alignSelf="center"
           >
             <Heading level={3}>Join our mission</Heading>
             <Box width={mobile ? "100%" : "80%"}>
@@ -51,11 +51,15 @@ export default ({ marginBottom }) => {
               </Text>
             </Box>
             <Box direction={mobile ? "column" : "row"} gap="small">
-              <Link to="/careers">
-                <Button primary label="explore careers" />
+              <Link to="/careers" style={{ textDecoration: "none" }}>
+                <Box>
+                  <Button primary label="explore careers" />
+                </Box>
               </Link>
-              <Link to="/careers">
-                <Button secondary label="Join as Counselor" />
+              <Link to="/careers" style={{ textDecoration: "none" }}>
+                <Box>
+                  <Button secondary label="Join as Counselor" />
+                </Box>
               </Link>
             </Box>
           </Box>

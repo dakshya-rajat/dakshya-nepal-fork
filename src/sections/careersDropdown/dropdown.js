@@ -51,11 +51,10 @@ export default ({ info, active }) => {
             <Text code="sub-r" size="small" color="b2">
               {info.responsibilites.value}
             </Text>
-            <Box width={mobile ? "100%" : "small"}>
+            <Box width={mobile ? "100%" : "xsmall"}>
               <Button
                 secondary
                 label="Apply"
-                alignSelf="start"
                 onClick={() => openForm(info.position.value)}
               />
             </Box>
