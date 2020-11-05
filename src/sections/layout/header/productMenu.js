@@ -1,5 +1,7 @@
 import React from "react"
 import { Box, Collapsible, Grid, ResponsiveContext } from "grommet"
+import { ScrollTo } from "react-scroll-to"
+
 import Heading from "../../../components/heading"
 import Button from "../../../components/button"
 
@@ -35,7 +37,16 @@ export default props => {
           <Icon color="b1" />
         </Box>
         <Box flex="grow">
-          <Button alignSelf="end" primary label="Know More" />
+          <ScrollTo>
+            {({ scroll }) => (
+              <Button
+                onClick={() => scroll({ y: 2800, smooth: true })}
+                alignSelf="end"
+                primary
+                label="Contact Sales"
+              />
+            )}
+          </ScrollTo>
         </Box>
       </Box>
       <Box width="100%">
