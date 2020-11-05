@@ -19,9 +19,9 @@ export default ({ member }) => {
           <Link to={member.linkedin}>
             <Linkedin color="b2" />
           </Link>
-          <Link to={member.email}>
+          <a href={member.email}>
             <Email color="b2" />
-          </Link>
+         </a>
         </Box>
       </Box>
     </Box>
