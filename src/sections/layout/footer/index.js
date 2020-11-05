@@ -36,18 +36,21 @@ export default props => {
           <Image src={LogoHoriWhite} alignSelf="start" />
         </Box>
         <Box direction="row" gap="small">
-          <Link to={"https://www.facebook.com/dakshyanepal"}>
+          <a href="https://www.facebook.com/dakshyanepal" target="_blank">
             <Facebook />
-          </Link>
-          <Link to={"#"}>
+          </a>
+          <a href="#">
             <Twitter />
-          </Link>
-          <Link to={"https://www.instagram.com/dakshyanepal/"}>
+          </a>
+          <a href="https://www.instagram.com/dakshyanepal/" target="_blank">
             <Instagram />
-          </Link>
-          <Link to={"https://www.linkedin.com/company/dakshya-nepal/"}>
+          </a>
+          <a
+            href={"https://www.linkedin.com/company/dakshya-nepal/"}
+            target="_blank"
+          >
             <LinkedIn />
-          </Link>
+          </a>
         </Box>
         <Text color="g1" code="subtext-r" size="small">
           #सक्षम-नेपाल
