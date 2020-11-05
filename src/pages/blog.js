@@ -6,10 +6,9 @@ import Blog from "../sections/blog"
 import { graphql } from "gatsby"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout active="blogs">
-      <SEO title="Blog" />
+      <SEO title="Blogs" />
       <Blog title="All Blogs" data={data} />
     </Layout>
   )

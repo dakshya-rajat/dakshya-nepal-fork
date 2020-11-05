@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Header, Image, ResponsiveContext } from "grommet"
-import LogoHorizontal from "../../../images/logo-horizontal.svg"
+import { Box, Header, Image, ResponsiveContext } from "grommet"
 
-export default props => {
+import ProductMenu from "./productMenu"
+
+export default ({ children }) => {
   const size = React.useContext(ResponsiveContext)
-
+  const url = typeof window !== "undefined" ? window.location.href : ""
+  console.log(url)
   return (
     <Header
       background="w1"
@@ -13,11 +15,19 @@ export default props => {
         size === "small" ? "16px" : { horizontal: "131px", vertical: "24px" }
       }
       elevation="header"
+      direction="column"
     >
-      <Link to="/">
-        <Image src={LogoHorizontal} label="Dakshya Nepal" />
-      </Link>
-      {props.children}
+      <Box direction="row" width="100%">
+        <Link to="/">
+          <Image
+            src="/images/logo-horizontal.svg"
+            label="Dakshya Nepal"
+            fill="vertical"
+          />
+        </Link>
+        {children}
+      </Box>
+      {url.includes("/products/") && <ProductMenu link={url} />}
     </Header>
   )
 }

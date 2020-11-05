@@ -4,13 +4,14 @@ import Heading from "../../components/heading"
 import FormField from "../../components/formField"
 import Button from "../../components/button"
 import Exit from "../../components/icons/exit"
-import { Formik } from "formik"
+import { Field, Formik } from "formik"
 import Notification from "../notification"
+import Text from "../../components/text"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
 
-  const url = process.env.GATSBY_API_URL + "/api/forms/submit/jobApplication"
+  const url = process.env.GATSBY_API_URL + "/api/forms/submit/applyConsultant"
 
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState(false)
@@ -24,7 +25,13 @@ export default props => {
       modal={true}
     >
       <Box direction="row" elevation="d1" align="center">
-        <Box pad="24px" gap="medium" width={mobile ? "100%" : "50%"}>
+        <Box
+          pad="24px"
+          gap="medium"
+          width={mobile ? "100%" : "50%"}
+          height="560px"
+          overflow="auto"
+        >
           <Box direction="row">
             <Image alignSelf="start" src="/images/logo-horizontal.svg" />
             {mobile ? (
@@ -35,14 +42,22 @@ export default props => {
               </Box>
             ) : null}
           </Box>
-          <Heading code={3}>Apply for a position</Heading>
+          <Heading margin={{ top: "medium" }} code={3}>
+            Apply for Consultant
+          </Heading>
           <Formik
             initialValues={{
               name: "",
+              gender: "",
               email: "",
-              message: "",
-              driveUrl: "",
-              position: props.position,
+              phone: "",
+              address: "",
+              qualification: "",
+              specialization: "",
+              training: "",
+              occupation: "",
+              whyAssociate: "",
+              position: "Consultant",
             }}
             onSubmit={async (values, { setSubmitting, resetForm }) => {
               const response = await fetch(url, {
@@ -81,6 +96,17 @@ export default props => {
                   values={values.name}
                   required={true}
                 />
+                <Box gap="xsmall">
+                  <Text size="small">Gender</Text>
+                  <Field name="gender" as="select">
+                    <option value="" disabled selected hidden>
+                      Select one
+                    </option>
+                    <option value="Academics">Male</option>
+                    <option value="Relationship">Female</option>
+                    <option value="Others">Others</option>
+                  </Field>
+                </Box>
                 <FormField
                   label="Your Email*"
                   placeholder="email@domain.com"
@@ -91,33 +117,91 @@ export default props => {
                   values={values.email}
                   required={true}
                 />
+                <FormField
+                  label="Contact Number"
+                  placeholder="9876564123"
+                  type="text"
+                  name="phone"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.phone}
+                  required={true}
+                />
                 <label
                   style={{
                     fontSize: "14px",
                     lineHeight: "normal",
                   }}
-                  htmlFor="message"
+                  htmlFor="address"
                 >
-                  Messages (If any)
+                  Address
                 </label>
                 <TextArea
-                  placeholder="Input your message"
+                  placeholder="Input your address"
                   size="small"
-                  name="message"
+                  name="address"
                   style={{ border: "2px solid #EAEAEA" }}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.message}
+                  values={values.address}
                 />
                 <FormField
-                  label="Your Resume Link *"
-                  placeholder="Google Drive Link"
+                  label="Education Qualification"
+                  placeholder="Undergraduate"
                   type="text"
-                  name="driveUrl"
+                  name="qualification"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  values={values.driveUrl}
+                  values={values.qualification}
                   required={true}
+                />
+                <FormField
+                  label="Any Specialization In Counseling"
+                  placeholder="Training"
+                  type="text"
+                  name="specialization"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.specialization}
+                  required={true}
+                />
+                <FormField
+                  label="Counseling Or Related Subjects Training Or Courses"
+                  placeholder="Your Training"
+                  type="text"
+                  name="training"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.training}
+                  required={true}
+                />
+                <FormField
+                  label="Current Occupation"
+                  placeholder="Your Occupation"
+                  type="text"
+                  name="occupation"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.occupation}
+                  required={true}
+                />
+                <label
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "normal",
+                  }}
+                  htmlFor="dakshya"
+                >
+                  Why do you want to associate with Dakshya Nepal?
+                </label>
+                <TextArea
+                  placeholder="Input your answer"
+                  size="small"
+                  name="whyAssociate"
+                  style={{ border: "2px solid #EAEAEA" }}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.whyAssociate}
                 />
                 <input type="hidden" name="position" value={values.position} />
                 <Box pad={{ top: "small" }}>

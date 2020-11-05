@@ -1,5 +1,6 @@
 import React from "react"
 import { Box, Image, ResponsiveContext } from "grommet"
+
 import LogoHoriWhite from "../../../images/logo-horizontal-white.svg"
 import Facebook from "../../../components/icons/facebook"
 import Instagram from "../../../components/icons/instagram"
@@ -9,7 +10,6 @@ import Text from "../../../components/text"
 import Call from "../../../components/icons/call"
 import Email from "../../../components/icons/email"
 import Location from "../../../components/icons/location"
-import MapImg from "../../../images/map.png"
 
 import footerMenu1 from "./footerMenu1.json"
 import footerMenu2 from "./footerMenu2.json"
@@ -17,10 +17,12 @@ import Footer from "./footer"
 import InfoBlock from "./infoBlock"
 import FooterBlock from "./footerBlock"
 import CollapsibleMenu from "./collapsibleMenu"
+import MapBox from "../../mapBox"
 import { Link } from "gatsby"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+
   return (
     <Footer>
       <Box
@@ -34,18 +36,21 @@ export default props => {
           <Image src={LogoHoriWhite} alignSelf="start" />
         </Box>
         <Box direction="row" gap="small">
-          <Link to={"https://www.facebook.com/dakshyanepal"}>
+          <a href="https://www.facebook.com/dakshyanepal" target="_blank">
             <Facebook />
-          </Link>
-          <Link to={"#"}>
+          </a>
+          <a href="#">
             <Twitter />
-          </Link>
-          <Link to={"https://www.instagram.com/dakshyanepal/"}>
+          </a>
+          <a href="https://www.instagram.com/dakshyanepal/" target="_blank">
             <Instagram />
-          </Link>
-          <Link to={"https://www.linkedin.com/company/dakshya-nepal/"}>
+          </a>
+          <a
+            href={"https://www.linkedin.com/company/dakshya-nepal/"}
+            target="_blank"
+          >
             <LinkedIn />
-          </Link>
+          </a>
         </Box>
         <Text color="g1" code="subtext-r" size="small">
           #सक्षम-नेपाल
@@ -62,11 +67,9 @@ export default props => {
       <CollapsibleMenu name="Products" items={footerMenu1} />
       <CollapsibleMenu name="Company" items={footerMenu2} active />
       <FooterBlock name="Contact">
-        <Box
-          height="80px"
-          background={{ image: `url(${MapImg})` }}
-          width="326px"
-        />
+        <Box height="80px" width="326px" overflow="hidden">
+          <MapBox />
+        </Box>
         <Box direction="column" gap="small">
           <InfoBlock text="+977 9802302101" icon={<Call color="b2" />} />
           <InfoBlock

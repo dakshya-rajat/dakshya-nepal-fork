@@ -3,9 +3,12 @@ import { Box, Image, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
+import ApplyConsultant from "../applyConsultant"
 
 export default ({ marginBottom }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
+  const [apply, setApply] = React.useState(false)
+
   return (
     <Box pad={mobile ? { top: "64px" } : { top: "90px" }}>
       <Box
@@ -51,12 +54,17 @@ export default ({ marginBottom }) => {
             </Box>
             <Box direction={mobile ? "column" : "row"} gap="small">
               <Button primary label="explore careers" />
-              <Button secondary label="Join as consultant" />
+              <Button
+                secondary
+                label="Join as consultant"
+                onClick={() => setApply(true)}
+              />
               <Button secondary label="Join as online tutor" />
             </Box>
           </Box>
         </Box>
       </Box>
+      {apply && <ApplyConsultant setApply={setApply} />}
     </Box>
   )
 }
