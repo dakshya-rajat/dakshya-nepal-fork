@@ -18,9 +18,9 @@ export default props => {
         <Box height="medium" width={mobile ? "100%" : "50%"}>
           <TextSlider textList={textList} />
           <Box
-            height={mobile ? "200%" : "62%"}
+            height="medium"
             width={mobile ? "100%" : "30%"}
-            background={`linear-gradient(180deg,#FFFBEF 13%,rgba(254,250,237,0) 87%)`}
+            background={`linear-gradient(180deg,#FFFFFF 13%,rgba(254,250,237,0) 87%)`}
             style={{
               position: "absolute",
               transform: "rotate(-180deg)",
@@ -31,7 +31,7 @@ export default props => {
           <Box
             height={mobile ? "30%" : "8%"}
             width={mobile ? "88%" : "30%"}
-            background={`linear-gradient(180deg, #FFFFFE 0%, rgba(254, 250, 237, 0) 87.5%)`}
+            background={`linear-gradient(180deg, #FFFFFF 0%, rgba(254, 250, 237, 0) 87.5%)`}
             style={{
               position: "absolute",
               pointerEvents: "none",
