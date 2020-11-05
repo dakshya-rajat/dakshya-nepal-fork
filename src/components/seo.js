@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, image }) {
+  const location = window ? window.location : ""
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -47,7 +49,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: `og:image`,
-          content: metaImage,
+          content: `${location.origin}${metaImage}`,
         },
         {
           property: `og:description`,
@@ -63,7 +65,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:image`,
-          content: metaImage,
+          content: `${location.origin}${metaImage}`,
         },
         {
           name: `twitter:creator`,
