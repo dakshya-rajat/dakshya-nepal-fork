@@ -17,6 +17,7 @@ import Footer from "./footer"
 import InfoBlock from "./infoBlock"
 import FooterBlock from "./footerBlock"
 import CollapsibleMenu from "./collapsibleMenu"
+import { Link } from "gatsby"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -33,10 +34,18 @@ export default props => {
           <Image src={LogoHoriWhite} alignSelf="start" />
         </Box>
         <Box direction="row" gap="small">
-          <Facebook />
-          <Twitter />
-          <Instagram />
-          <LinkedIn />
+          <Link to={"https://www.facebook.com/dakshyanepal"}>
+            <Facebook />
+          </Link>
+          <Link to={"#"}>
+            <Twitter />
+          </Link>
+          <Link to={"https://www.instagram.com/dakshyanepal/"}>
+            <Instagram />
+          </Link>
+          <Link to={"https://www.linkedin.com/company/dakshya-nepal/"}>
+            <LinkedIn />
+          </Link>
         </Box>
         <Text color="g1" code="subtext-r" size="small">
           #सक्षम-नेपाल
@@ -59,7 +68,7 @@ export default props => {
           width="326px"
         />
         <Box direction="column" gap="small">
-          <InfoBlock text="+977 9808434319" icon={<Call color="b2" />} />
+          <InfoBlock text="+977 9802302101" icon={<Call color="b2" />} />
           <InfoBlock
             text="info@dakshyanepal.com "
             icon={<Email color="b2" />}

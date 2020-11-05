@@ -1,11 +1,14 @@
 [
   {
-    "label": "Blog"
+    "label": "Blog",
+    "url": "/blog"
   },
   {
-    "label": "About"
+    "label": "About",
+    "url": "/about"
   },
   {
-    "label": "Careers"
+    "label": "Careers",
+    "url": "/careers"
   }
 ]

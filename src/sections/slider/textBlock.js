@@ -3,6 +3,7 @@ import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
 import { Box } from "grommet"
+import { Link } from "gatsby"
 
 export default ({ mobile }) => {
   return (
@@ -25,9 +26,15 @@ export default ({ mobile }) => {
         revolutionize the traditional way of learning to make it more productive
         and effective.
       </Text>
-      <Box width={mobile ? "100%" : "small"}>
-        <Button primary label="Explore Products" />
-      </Box>
+
+      <Link to={"/products"}>
+        <Button
+          selfAlign={mobile ? null : "start"}
+          as="span"
+          primary
+          label="Explore Products"
+        />
+      </Link>
     </Box>
   )
 }

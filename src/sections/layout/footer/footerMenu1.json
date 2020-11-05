@@ -1,17 +1,18 @@
 [
   {
-    "label": "Smart School"
+    "label": "Smart School",
+    "url": "/products/smart-school"
   },
   {
-    "label": "Online Tuition"
+    "label": "Qbex",
+    "url": "/products/qbex"
   },
   {
-    "label": "Guidance Counseling"
+    "label": "Kalam CMS",
+    "url": "/products/kalam-cms"
   },
   {
-    "label": "Kalam CMS"
-  },
-  {
-    "label": "Qbex"
+    "label": "Guidance Counseling",
+    "url": "/products/guidance-counseling"
   }
 ]
