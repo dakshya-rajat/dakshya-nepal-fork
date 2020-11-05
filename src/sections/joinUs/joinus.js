@@ -3,7 +3,7 @@ import { Box, Image } from "grommet"
 import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
-import ApplyJob from "../applyJob"
+import ApplyConsultant from "../applyConsultant"
 
 export default ({ data, mobile }) => {
   const [apply, setApply] = React.useState(false)
@@ -41,12 +41,7 @@ export default ({ data, mobile }) => {
           onClick={() => setApply(true)}
         />
       </Box>
-      {apply && (
-        <ApplyJob
-          setApply={setApply}
-          position={data.title.replace("Join as ", "")}
-        />
-      )}
+      {apply && <ApplyConsultant setApply={setApply} />}
     </Box>
   )
 }
