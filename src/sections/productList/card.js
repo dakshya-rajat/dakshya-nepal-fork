@@ -14,9 +14,11 @@ export default ({ product }) => {
               <Heading code={3} margin={{ bottom: "4px", top: "0px" }}>
                 {product.name}
               </Heading>
-              <Heading code={4} color="h1" margin="0">
-                @NPR{product.price}/Session
-              </Heading>
+              {product.price !== "" && (
+                <Heading code={4} color="h1" margin="0">
+                  @NPR{product.price}/Session
+                </Heading>
+              )}
             </Box>
             <Box alignSelf="center">
               <ArrowRight color="b1" />

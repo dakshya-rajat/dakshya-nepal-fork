@@ -16,14 +16,12 @@ export default props => {
     >
       <Heading code={2}>Guidance Counseling</Heading>
       <Text color="b2" code="sub-r">
-        Viverra turpis neque massa est erat felis lectus rhoncus magnis. Rutrum
-        quam arcu habitant est. Condimentum sed enim est, fermentum id egestas.
-        Amet, eget neque aliquet ultricies ac nibh elementum velit et.
-        Adipiscing quis dolor felis vitae viverra elit a in. Nam consequat nulla
-        cursus donec faucibus nunc massa in. Quisque tincidunt netus in
-        consequat risus dignissim morbi. Vulputate sit tempus, tincidunt sit.
-        Ridiculus aenean scelerisque eu, in nisi. Facilisis mattis netus
-        consectetur ipsum nec quam.
+        Dakshya Nepal brings to you Guidance Counselors who help both the
+        parents and students to resolve their respective issues. We are trying
+        to incorporate wider goals of helping students develop socially,
+        personally and academically. We are also trying to be the mediator for
+        parents to help them find a better way to interact with their children
+        academically and personally.
       </Text>
     </Box>
   )

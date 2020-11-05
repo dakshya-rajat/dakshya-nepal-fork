@@ -51,70 +51,74 @@ export default ({ product }) => {
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>
-            <FormField
-              label="Name of Organization *"
-              placeholder="Input your organization name"
-              name="orgName"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values.orgName}
-              required="true"
-            />
-            <FormField
-              label="Address"
-              placeholder="Input your Address"
-              name="address"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values.address}
-            />
-            <FormField
-              label="Your Email"
-              placeholder="Input your email"
-              name="email"
-              type="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values.email}
-            />
-            <FormField
-              label="Contact Number *"
-              placeholder="Input your phone number"
-              name="phone"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values.number}
-              required="true"
-            />
-            <label
-              style={{
-                fontSize: "14px",
-                lineHeight: "normal",
-              }}
-              htmlFor="message"
-            >
-              Messages (If any)
-            </label>
-            <TextArea
-              placeholder="Input your message"
-              size="small"
-              name="message"
-              style={{ border: "2px solid #EAEAEA" }}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values.message}
-            />
-            <input type="hidden" value={values.product} />
-            <Button
-              primary
-              label="Contact Sales"
-              alignSelf={mobile ? null : "start"}
-              type="submit"
-              disabled={isSubmitting}
-            />
+            <Box gap="small">
+              <FormField
+                label="Name of Organization *"
+                placeholder="Input your organization name"
+                name="orgName"
+                type="text"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                values={values.orgName}
+                required="true"
+              />
+              <FormField
+                label="Address"
+                placeholder="Input your Address"
+                name="address"
+                type="text"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                values={values.address}
+              />
+              <FormField
+                label="Your Email"
+                placeholder="Input your email"
+                name="email"
+                type="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                values={values.email}
+              />
+              <FormField
+                label="Contact Number *"
+                placeholder="Input your phone number"
+                name="phone"
+                type="text"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                values={values.number}
+                required="true"
+              />
+              <label
+                style={{
+                  fontSize: "14px",
+                  lineHeight: "normal",
+                }}
+                htmlFor="message"
+              >
+                Messages (If any)
+              </label>
+              <TextArea
+                placeholder="Input your message"
+                size="small"
+                name="message"
+                style={{ border: "2px solid #EAEAEA" }}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                values={values.message}
+              />
+              <input type="hidden" value={values.product} />
+              <Box width={mobile ? "100%" : "small"}>
+                <Button
+                  primary
+                  label="Contact Sales"
+                  alignSelf={mobile ? null : "start"}
+                  type="submit"
+                  disabled={isSubmitting}
+                />
+              </Box>
+            </Box>
           </form>
         )}
       </Formik>

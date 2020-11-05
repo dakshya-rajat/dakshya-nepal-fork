@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Collapsible } from "grommet"
+import { Box, Collapsible, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
@@ -19,6 +19,7 @@ export default ({ info, active }) => {
   }
 
   const Icon = open ? chevUp : chevDown
+  const mobile = React.useContext(ResponsiveContext) === "small"
 
   return (
     <>
@@ -50,12 +51,14 @@ export default ({ info, active }) => {
             <Text code="sub-r" size="small" color="b2">
               {info.responsibilites.value}
             </Text>
-            <Button
-              secondary
-              label="Apply"
-              alignSelf="start"
-              onClick={() => openForm(info.position.value)}
-            />
+            <Box width={mobile ? "100%" : "small"}>
+              <Button
+                secondary
+                label="Apply"
+                alignSelf="start"
+                onClick={() => openForm(info.position.value)}
+              />
+            </Box>
           </Box>
         </Collapsible>
       </Box>

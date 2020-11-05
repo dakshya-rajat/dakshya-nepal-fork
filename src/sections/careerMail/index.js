@@ -74,7 +74,7 @@ export default props => {
               <form onSubmit={handleSubmit}>
                 <Box direction={mobile ? "column" : "row"} gap="small">
                   <FormField
-                    placeholder="Select a position"
+                    placeholder="Enter a position"
                     flex="grow"
                     name="position"
                     required={true}

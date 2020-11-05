@@ -3,6 +3,7 @@ import Text from "../../../components/text"
 import { Box, Collapsible, ResponsiveContext } from "grommet"
 import chevDown from "../../../components/icons/chevron-down"
 import chevUp from "../../../components/icons/chevron-up"
+import { Link } from "gatsby"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -32,9 +33,11 @@ export default props => {
       <Collapsible open={open || Boolean(!mobile)} {...props}>
         <Box gap="small">
           {props.items.map((item, index) => (
-            <Text code="subtext-r" color="g1" key={index} size="small">
-              {item.label}
-            </Text>
+            <Link to={item.url} style={{ textDecoration: "none" }}>
+              <Text code="subtext-r" color="g1" key={index} size="small">
+                {item.label}
+              </Text>
+            </Link>
           ))}
         </Box>
       </Collapsible>
