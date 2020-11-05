@@ -55,8 +55,6 @@ export default props => {
                 body: JSON.stringify({ form: values }),
               })
 
-              console.log(response)
-
               if (response.ok) {
                 setSuccess(true)
                 setSubmitting(false)
