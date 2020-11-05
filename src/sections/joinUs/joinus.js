@@ -14,7 +14,7 @@ export default ({ data, mobile }) => {
       <Box
         background="p1-l"
         overflow="hidden"
-        width="large"
+        width="40%"
         pad={{ top: "medium" }}
       >
         <Image
@@ -31,7 +31,9 @@ export default ({ data, mobile }) => {
         <Text code="subtext-r" size="small" color="b2">
           {data.desc}
         </Text>
-        <Button secondary label="Apply" alignSelf="start" />
+        <Box width={mobile ? "100%" : "small"}>
+          <Button secondary label="Apply" />
+        </Box>
       </Box>
     </Box>
   )

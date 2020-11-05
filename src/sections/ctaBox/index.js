@@ -3,6 +3,7 @@ import { Box, Image, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Text from "../../components/text"
 import Button from "../../components/button"
+import { Link } from "gatsby"
 
 export default ({ marginBottom }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
@@ -50,9 +51,12 @@ export default ({ marginBottom }) => {
               </Text>
             </Box>
             <Box direction={mobile ? "column" : "row"} gap="small">
-              <Button primary label="explore careers" />
-              <Button secondary label="Join as consultant" />
-              <Button secondary label="Join as online tutor" />
+              <Link to="/careers">
+                <Button primary label="explore careers" />
+              </Link>
+              <Link to="/careers">
+                <Button secondary label="Join as Counselor" />
+              </Link>
             </Box>
           </Box>
         </Box>
