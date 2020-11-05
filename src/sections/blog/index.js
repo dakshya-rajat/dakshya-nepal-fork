@@ -23,8 +23,8 @@ export default ({ title, url, data }) => {
     <Box
       pad={
         mobile
-          ? { top: "90px", horizontal: "16px" }
-          : { top: "90px", horizontal: "131.5px" }
+          ? { top: "28px", horizontal: "16px" }
+          : { top: "40px", horizontal: "131px" }
       }
     >
       <Box direction="row">
