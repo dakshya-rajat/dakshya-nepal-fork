@@ -9,7 +9,7 @@ import CareerMail from "../sections/careerMail"
 
 export default ({ data }) => {
   return (
-    <Layout>
+    <Layout active="careers">
       <Seo title="Careers" />
       <JoinUs />
       <CareerDropdown data={data.allCockpitCareers.nodes} />

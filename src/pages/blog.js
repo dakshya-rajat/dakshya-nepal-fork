@@ -8,7 +8,7 @@ import { graphql } from "gatsby"
 export default ({ data }) => {
   console.log(data)
   return (
-    <Layout>
+    <Layout active="blogs">
       <SEO title="Blog" />
       <Blog title="All Blogs" data={data} />
     </Layout>
