@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Dakshya Nepal`,
-    description: `Your tagline here`,
-    author: `@rawalyogendra`,
+    description: `We Believe In Skilled Nepal`,
+    author: `@dakshyanepal`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
