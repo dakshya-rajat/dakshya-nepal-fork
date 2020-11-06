@@ -114,3 +114,14 @@ select:focus {
 .mapboxgl-ctrl-bottom-right {
     display: none;
 }
+
+.jobDetails strong {
+    font-weight: bold;
+    line-height: 1.1em;
+}
+
+.jobDetails ul{
+    list-style: square;
+    margin-block-start: 1em;
+    margin-left: 1.2em;
+}
