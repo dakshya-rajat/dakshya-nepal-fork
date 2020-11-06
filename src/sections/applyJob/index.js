@@ -32,7 +32,7 @@ export default props => {
               </Box>
             ) : null}
           </Box>
-          <Heading code={4}>Apply for a position</Heading>
+          <Heading code={4}>Apply for {props.position}</Heading>
           <Formik
             initialValues={{
               name: "",
