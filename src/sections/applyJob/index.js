@@ -17,29 +17,27 @@ export default props => {
 
   return (
     <Layer
-      animation="slide"
-      position="center"
       onClickOutside={() => props.setApply(false)}
       onEsc={() => props.setApply(false)}
       modal={true}
     >
-      <Box direction="row" elevation="d1" align="center">
-        <Box pad="24px" gap="medium" width={mobile ? "100%" : "50%"}>
+      <Box direction="row">
+        <Box pad="24px" gap="small" width={mobile ? "100%" : "50%"}>
           <Box direction="row">
-            <Image alignSelf="start" src="/images/logo-horizontal.svg" />
             {mobile ? (
               <Box flex="grow" alignContent="end">
-                <Box onClick={() => props.setApply(false)} alignSelf="end">
+                <Box onClick={() => props.setApply(false)} alignSelf="start">
                   <Exit />
                 </Box>
               </Box>
             ) : null}
           </Box>
-          <Heading code={3}>Apply for a position</Heading>
+          <Heading code={4}>Apply for a position</Heading>
           <Formik
             initialValues={{
               name: "",
               email: "",
+              phone: "",
               message: "",
               driveUrl: "",
               position: props.position,
@@ -91,6 +89,16 @@ export default props => {
                   values={values.email}
                   required={true}
                 />
+                <FormField
+                  label="Your Phone*"
+                  placeholder="9854756256"
+                  type="text"
+                  name="phone"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  values={values.phone}
+                  required={true}
+                />
                 <label
                   style={{
                     fontSize: "14px",
@@ -120,7 +128,7 @@ export default props => {
                   required={true}
                 />
                 <input type="hidden" name="position" value={values.position} />
-                <Box pad={{ top: "small" }}>
+                <Box pad={{ top: "xsmall" }}>
                   <Button
                     type="submit"
                     alignSelf="start"
