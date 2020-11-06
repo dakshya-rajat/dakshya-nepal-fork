@@ -45,11 +45,10 @@ export default ({ info, active }) => {
             <Text code="sub-m" size="small">
               Requirement: {info.requirement.value}
             </Text>
-            <Text code="sub-m" size="small">
-              Responsibilities:
-            </Text>
-            <Text code="sub-r" size="small" color="b2">
-              {info.responsibilites.value}
+            <Text code="sub-r" size="small" color="b2" className="jobDetails">
+              <div
+                dangerouslySetInnerHTML={{ __html: info.responsibilites.value }}
+              />
             </Text>
             <Box width={mobile ? "100%" : "small"}>
               <Button
