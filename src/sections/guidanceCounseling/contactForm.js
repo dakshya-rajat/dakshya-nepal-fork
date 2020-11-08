@@ -11,7 +11,9 @@ import Notification from "../notification"
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   const url =
-    process.env.GATSBY_API_URL + "/api/forms/submit/guidanceCounseling"
+    process.env.GATSBY_API_URL +
+    "/api/forms/submit/guidanceCounseling?token=" +
+    process.env.GATSBY_API_KEY
 
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState(false)
