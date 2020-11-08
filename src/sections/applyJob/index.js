@@ -59,7 +59,7 @@ export default props => {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${process.env.GATSBY_API_KEY}`,
+                    "Cockpit-Token": process.env.GATSBY_API_KEY,
                   },
                   mode: "no-cors",
                   body: JSON.stringify({ form: values }),
