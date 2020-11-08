@@ -3,16 +3,23 @@ import Layout from "../sections/layout"
 import Heading from "../components/heading"
 import Text from "../components/text"
 import Button from "../components/button"
-import { Box } from "grommet"
+import { Box, ResponsiveContext } from "grommet"
 import SEO from "../components/seo"
 import ProductList from "../sections/productList"
 import { Link } from "gatsby"
 
 export default () => {
+  const mobile = React.useContext(ResponsiveContext) === "small"
   return (
     <Layout>
       <SEO title="404: Page Not Found" />
-      <Box pad={{ horizontal: "131px", top: "90px" }}>
+      <Box
+        pad={
+          mobile
+            ? { horizontal: "16px", top: "60px" }
+            : { horizontal: "131px", top: "90px" }
+        }
+      >
         <Heading code={1}>
           Oh snap! <br />
           404: page not found
