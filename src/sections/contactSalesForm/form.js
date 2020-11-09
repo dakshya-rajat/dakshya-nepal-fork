@@ -31,7 +31,7 @@ export default ({ product }) => {
               "Content-Type": "application/json",
               "Cockpit-Token": process.env.GATSBY_API_KEY,
             },
-            mode: "cors",
+            mode: "no-cors",
             body: JSON.stringify({ form: values }),
           })
 

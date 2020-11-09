@@ -25,7 +25,10 @@ export default props => {
       >
         <Box direction="row">
           <Box pad="24px" gap="small" width={mobile ? "100%" : "50%"}>
-            <Box direction="row" margin={{ bottom: "large" }}>
+            <Box
+              direction="row"
+              margin={mobile ? { bottom: "large" } : { bottom: "small" }}
+            >
               <Heading code={4}>Apply for {props.position}</Heading>
               <ResponsiveContext.Consumer>
                 {size =>
@@ -58,7 +61,7 @@ export default props => {
                     "Content-Type": "application/json",
                     "Cockpit-Token": process.env.GATSBY_API_KEY,
                   },
-                  mode: "cors",
+                  mode: "no-cors",
                   body: JSON.stringify({ form: values }),
                 })
 
