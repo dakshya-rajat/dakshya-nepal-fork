@@ -8,9 +8,7 @@ import Notification from "../notification"
 export default ({ product }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
   const url =
-    process.env.GATSBY_API_URL +
-    "/api/forms/submit/productContactForm?token=" +
-    process.env.GATSBY_API_KEY
+    process.env.GATSBY_API_URL + "/api/forms/submit/productContactForm"
 
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState(false)
