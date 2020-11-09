@@ -34,7 +34,7 @@ export default props => {
           >
             <Box
               direction="row"
-              margin={mobile ? { bottom: "large" } : { bottom: "small" }}
+              margin={mobile ? { bottom: "small" } : { bottom: "large" }}
             >
               <Heading code={4}>Apply for counselor</Heading>
               <ResponsiveContext.Consumer>
