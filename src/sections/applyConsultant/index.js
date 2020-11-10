@@ -8,11 +8,12 @@ import { Field, Formik } from "formik"
 import Notification from "../notification"
 import Text from "../../components/text"
 import { RemoveScroll } from "react-remove-scroll"
+import submitForm from "../../utils/submitForm"
 
 export default props => {
   const mobile = React.useContext(ResponsiveContext) === "small"
 
-  const url = process.env.GATSBY_API_URL + "/api/forms/submit/applyConsultant"
+  const url = "/api/forms/submit/applyConsultant"
 
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState(false)
@@ -67,16 +68,7 @@ export default props => {
                 position: "Consultant",
               }}
               onSubmit={async (values, { setSubmitting, resetForm }) => {
-                const response = await fetch(url, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    "Cockpit-Token": process.env.GATSBY_API_FORM,
-                  },
-                  body: JSON.stringify({ form: values }),
-                })
-
-                if (response.ok) {
+                if (await submitForm(values, url)) {
                   setSuccess(true)
                   setSubmitting(false)
                   resetForm()
@@ -226,11 +218,17 @@ export default props => {
                 </form>
               )}
             </Formik>
-            {success && <Notification message="Message Sent Successfully" />}
+            {success && (
+              <Notification
+                message="Message Sent Successfully"
+                closeMain={setSuccess}
+              />
+            )}
             {error && (
               <Notification
                 message="Could not send message. Please try again!"
                 error
+                closeMain={setError}
               />
             )}
           </Box>
