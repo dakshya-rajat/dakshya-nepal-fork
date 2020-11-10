@@ -29,9 +29,8 @@ export default ({ product }) => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Cockpit-Token": process.env.GATSBY_API_KEY,
+              "Cockpit-Token": process.env.GATSBY_API_FORM,
             },
-            mode: "no-cors",
             body: JSON.stringify({ form: values }),
           })
 
