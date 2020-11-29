@@ -1,7 +1,5 @@
 import React from "react"
 
-import { graphql } from "gatsby"
-
 import Seo from "../components/seo"
 import Layout from "../sections/layout"
 import Slider from "../sections/slider"
@@ -14,13 +12,24 @@ import Testimonial from "../sections/testimonial"
 import Newsletter from "../sections/newsletter"
 
 export default ({ data }) => {
+  const [blogData, setBlogData] = React.useState([])
+
+  React.useEffect(() => {
+    // get data from api
+    fetch(`${process.env.GATSBY_API_URL}/api/collections/get/blog`)
+      .then(response => response.json()) // parse JSON from request
+      .then(resultData => {
+        setBlogData(resultData.entries)
+      }) // set data for the blog
+  }, [])
+
   return (
     <Layout>
       <Seo title="Home" />
       <Slider />
       <Features />
       <OnlineClasses />
-      <Blog title="blog" url="/blog" data={data} />
+      <Blog title="blog" url="/blog" data={blogData} />
       <CtaBox />
       <ClientSection />
       <Testimonial />
@@ -28,35 +37,3 @@ export default ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  {
-    allCockpitBlog(filter: { lang: { eq: "en" } }, limit: 3) {
-      edges {
-        node {
-          fields {
-            path
-          }
-          title {
-            value
-          }
-          category {
-            value
-          }
-          timeToRead {
-            value
-          }
-          coverImage {
-            value {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
