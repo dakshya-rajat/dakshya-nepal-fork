@@ -44,7 +44,7 @@ export default ({ loading, title, url, data }) => {
             title={post.title}
             image={post.coverImage.path}
             minRead={post.timeToRead}
-            link={post.link}
+            link={`/blog/${post.slug}`}
           />
         ))}
         {loading && [11, 58, 78].map(index => <BlogCardLoading key={index} />)}

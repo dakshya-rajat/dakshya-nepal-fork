@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Text from "../../components/text"
 import Heading from "../../components/heading"
 
-export default ({ mobile, title, image, minRead, link, category }) => {
+export default ({ title, image, minRead, link, category }) => {
   return (
     <Box width="100%" round="4px" border={{ color: "w2" }} animation="fadeIn">
       <Link style={{ textDecoration: "none", color: "inherit" }} to={link}>
