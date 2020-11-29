@@ -1,7 +1,6 @@
 import React from "react"
-import { Box } from "grommet"
+import { Box, Image } from "grommet"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 import Text from "../../components/text"
 import Heading from "../../components/heading"
 
@@ -10,7 +9,11 @@ export default ({ mobile, title, image, minRead, link, category }) => {
     <Box width={mobile ? "98%" : "33.33%"} round="4px" border={{ color: "w2" }}>
       <Link style={{ textDecoration: "none", color: "inherit" }} to={link}>
         <Box height="small">
-          <Img fluid={image} alt={title} />
+          <Image
+            src={process.env.GATSBY_API_URL + image}
+            alt={title}
+            fit="cover"
+          />
         </Box>
         <Box pad={{ horizontal: "16px", top: "16px", bottom: "40px" }}>
           <Box direction="row">
