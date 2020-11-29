@@ -6,12 +6,7 @@ import Heading from "../../components/heading"
 
 export default ({ mobile, title, image, minRead, link, category }) => {
   return (
-    <Box
-      width={mobile ? "98%" : "33.33%"}
-      round="4px"
-      border={{ color: "w2" }}
-      animation="fadeIn"
-    >
+    <Box width="100%" round="4px" border={{ color: "w2" }} animation="fadeIn">
       <Link style={{ textDecoration: "none", color: "inherit" }} to={link}>
         <Box height="small">
           <Image
