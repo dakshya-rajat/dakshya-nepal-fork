@@ -16,6 +16,7 @@ import Facebook from "../../components/icons/facebook"
 import Twitter from "../../components/icons/twitter"
 import Instagram from "../../components/icons/instagram"
 import Linkedin from "../../components/icons/linkedin"
+import SEO from "../../components/seo"
 
 const transform = {
   p: "p",
@@ -32,6 +33,7 @@ export const BlogLoaded = ({ blogData }) => {
       pad={mobile ? { horizontal: "16px" } : { horizontal: "268px" }}
       animation="fadeIn"
     >
+      <SEO title={blogData.title} />
       <Box gap="small" direction="row" pad={{ top: "32px" }}>
         <ArrowLeft color="b1" />
         <Text code="sub-r" color="b2">
