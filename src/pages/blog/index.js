@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../sections/layout"
-import SEO from "../components/seo"
-import Blog from "../sections/blog"
+import Layout from "../../sections/layout"
+import SEO from "../../components/seo"
+import Blog from "../../sections/blog"
 
 export default () => {
   const [blogData, setBlogData] = React.useState([])
