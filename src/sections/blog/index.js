@@ -5,8 +5,9 @@ import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
 import ComponentSlider from "../componentSlider"
+import BlogCardLoading from "../../components/blogCardLoading"
 
-export default ({ title, url, data }) => {
+export default ({ loading, title, url, data }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
 
   return (
@@ -46,6 +47,7 @@ export default ({ title, url, data }) => {
             link={post.link}
           />
         ))}
+        {loading && [11, 58, 78].map(index => <BlogCardLoading key={index} />)}
       </ComponentSlider>
     </Box>
   )
