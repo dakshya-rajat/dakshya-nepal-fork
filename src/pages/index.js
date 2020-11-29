@@ -13,12 +13,14 @@ import Newsletter from "../sections/newsletter"
 
 export default () => {
   const [blogData, setBlogData] = React.useState([])
+  const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     // get data from api
     fetch(`${process.env.GATSBY_API_URL}/api/collections/get/blog?limit=3`)
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
+        setLoading(null)
         setBlogData(resultData.entries)
       }) // set data for the blog
   }, [])
@@ -29,7 +31,7 @@ export default () => {
       <Slider />
       <Features />
       <OnlineClasses />
-      <Blog title="blog" url="/blog" data={blogData} />
+      <Blog title="blog" url="/blog" data={blogData} loading={loading} />
       <CtaBox />
       <ClientSection />
       <Testimonial />
