@@ -9,17 +9,6 @@ import ComponentSlider from "../componentSlider"
 export default ({ title, url, data }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
 
-  const blogPosts = []
-  data.allCockpitBlog.edges.map(data =>
-    blogPosts.push({
-      category: data.node.category.value,
-      title: data.node.title.value,
-      minRead: data.node.timeToRead.value,
-      image: data.node.coverImage.value.childImageSharp.fluid,
-      link: data.node.fields.path,
-    })
-  )
-
   return (
     <Box>
       <Box
@@ -46,14 +35,14 @@ export default ({ title, url, data }) => {
         margin={mobile ? { top: "16px" } : { top: "48px" }}
         gap="small"
       >
-        {blogPosts.map((post, index) => (
+        {data.map((post, index) => (
           <BlogCard
             key={index}
             category={post.category}
             mobile={mobile}
             title={post.title}
-            image={post.image}
-            minRead={post.minRead}
+            image={post.coverImage.path}
+            minRead={post.timeToRead}
             link={post.link}
           />
         ))}
