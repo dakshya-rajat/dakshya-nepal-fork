@@ -4,12 +4,13 @@ import Layout from "../../sections/layout"
 import SEO from "../../components/seo"
 
 import { BlogLoading, BlogLoaded } from "../../sections/blogLoading"
+import ErrorPage from "../../sections/404"
 
 export default props => {
   const slug = props.params.slug
   const [blogData, setBlogData] = React.useState({})
   const [loading, setLoading] = React.useState(true)
-
+  const [err, setErr] = React.useState(null)
   React.useEffect(() => {
     // get data from api
     fetch(
@@ -18,14 +19,22 @@ export default props => {
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setLoading(null)
-        setBlogData(resultData.entries[0])
-        document.title = resultData.entries[0].title
+        if (resultData.entries.length === 0) {
+          setErr(true)
+        } else {
+          setBlogData(resultData.entries[0])
+        }
       }) // set data for the blog
   }, [slug])
   return (
     <Layout active="blogs">
-      <SEO title={blogData.name} />
-      {loading ? <BlogLoading /> : <BlogLoaded blogData={blogData} />}
+      {loading ? (
+        <BlogLoading />
+      ) : err ? (
+        <ErrorPage />
+      ) : (
+        <BlogLoaded blogData={blogData} />
+      )}
     </Layout>
   )
 }
