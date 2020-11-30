@@ -9,7 +9,9 @@ export default () => {
   const [loading, setLoading] = React.useState(true)
   React.useEffect(() => {
     // get data from api
-    fetch(`${process.env.GATSBY_API_URL}/api/collections/get/blog`)
+    fetch(
+      `${process.env.GATSBY_API_URL}/api/collections/get/blog?sort[_created]=-1`
+    )
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setLoading(null)

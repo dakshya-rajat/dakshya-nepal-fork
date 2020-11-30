@@ -17,7 +17,9 @@ export default () => {
 
   React.useEffect(() => {
     // get data from api
-    fetch(`${process.env.GATSBY_API_URL}/api/collections/get/blog?limit=3`)
+    fetch(
+      `${process.env.GATSBY_API_URL}/api/collections/get/blog?limit=3&sort[_created]=-1`
+    )
       .then(response => response.json()) // parse JSON from request
       .then(resultData => {
         setLoading(null)
