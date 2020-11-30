@@ -1,7 +1,6 @@
 import React from "react"
 import { Box } from "grommet"
 import Skeleton from "react-loading-skeleton"
-import ComponentSlider from "../sections/componentSlider"
 
 export default () => {
   return (

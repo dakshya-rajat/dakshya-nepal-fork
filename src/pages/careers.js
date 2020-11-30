@@ -5,7 +5,6 @@ import Seo from "../components/seo"
 import JoinUs from "../sections/joinUs"
 import CareerDropdown from "../sections/careersDropdown"
 import CareerMail from "../sections/careerMail"
-import Skeleton from "react-loading-skeleton"
 
 export default () => {
   const [careerData, setCareerData] = React.useState([])

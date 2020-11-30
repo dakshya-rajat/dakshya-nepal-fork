@@ -21,7 +21,11 @@ import SEO from "../../components/seo"
 const transform = {
   p: "p",
   img: node => (
-    <img src={process.env.GATSBY_API_URL + node.src} width="100%" alt="image" />
+    <img
+      src={process.env.GATSBY_API_URL + node.src}
+      width="100%"
+      alt={node.alt}
+    />
   ),
 }
 

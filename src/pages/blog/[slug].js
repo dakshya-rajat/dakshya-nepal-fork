@@ -1,7 +1,6 @@
 import React from "react"
 
 import Layout from "../../sections/layout"
-import SEO from "../../components/seo"
 
 import { BlogLoading, BlogLoaded } from "../../sections/blogLoading"
 import ErrorPage from "../../sections/404"
