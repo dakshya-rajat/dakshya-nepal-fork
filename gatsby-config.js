@@ -38,17 +38,6 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    {
-      resolve: "@fika/gatsby-source-cockpit",
-      options: {
-        token: process.env.GATSBY_API_KEY,
-        baseUrl: process.env.GATSBY_API_URL,
-        locales: ["en"],
-        collections: [],
-        singletons: [],
-      },
-    },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

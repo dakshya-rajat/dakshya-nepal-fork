@@ -5,9 +5,7 @@
   "version": "0.1.0",
   "author": "Yogendra Rawal <rawalyogendra@gmail.com>",
   "dependencies": {
-    "@fika/gatsby-source-cockpit": "^1.1.2",
     "dayjs": "^1.9.6",
-    "dompurify": "^2.2.0",
     "dotenv": "^8.2.0",
     "formik": "^2.2.1",
     "gatsby": "^2.24.83",
@@ -19,7 +17,6 @@
     "gatsby-plugin-sharp": "^2.6.28",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^2.3.25",
-    "gatsby-transformer-remark": "^2.9.0",
     "gatsby-transformer-sharp": "^2.5.13",
     "grommet": "^2.15.0",
     "grommet-icons": "^4.4.0",
