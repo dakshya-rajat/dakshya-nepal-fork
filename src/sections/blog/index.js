@@ -5,20 +5,10 @@ import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
 import ComponentSlider from "../componentSlider"
+import BlogCardLoading from "../../components/blogCardLoading"
 
-export default ({ title, url, data }) => {
+export default ({ loading, title, url, data }) => {
   const mobile = React.useContext(ResponsiveContext) === "small"
-
-  const blogPosts = []
-  data.allCockpitBlog.edges.map(data =>
-    blogPosts.push({
-      category: data.node.category.value,
-      title: data.node.title.value,
-      minRead: data.node.timeToRead.value,
-      image: data.node.coverImage.value.childImageSharp.fluid,
-      link: data.node.fields.path,
-    })
-  )
 
   return (
     <Box>
@@ -46,17 +36,18 @@ export default ({ title, url, data }) => {
         margin={mobile ? { top: "16px" } : { top: "48px" }}
         gap="small"
       >
-        {blogPosts.map((post, index) => (
+        {data.map((post, index) => (
           <BlogCard
             key={index}
             category={post.category}
             mobile={mobile}
             title={post.title}
-            image={post.image}
-            minRead={post.minRead}
-            link={post.link}
+            image={post.coverImage.path}
+            minRead={post.timeToRead}
+            link={`/blog/${post.slug}`}
           />
         ))}
+        {loading && [11, 58, 78].map(index => <BlogCardLoading key={index} />)}
       </ComponentSlider>
     </Box>
   )
