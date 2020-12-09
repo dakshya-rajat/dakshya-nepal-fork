@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Box, ResponsiveContext } from "grommet"
+import { Box, Grid, ResponsiveContext } from "grommet"
 import Heading from "../../components/heading"
 import Button from "../../components/button"
 import BlogCard from "./blogCard"
@@ -31,6 +31,19 @@ export default ({ loading, title, url, data }) => {
             ) : null}
           </Box>
         </Box>
+        {loading ? (
+          <Grid
+            margin={mobile ? { top: "16px" } : { top: "48px" }}
+            columns={mobile ? "100%" : "31%"}
+            gap="small"
+          >
+            {mobile ? (
+              <BlogCardLoading />
+            ) : (
+              [22, 66, 99].map(index => <BlogCardLoading key={index} />)
+            )}
+          </Grid>
+        ) : null}
       </Box>
       <ComponentSlider
         margin={mobile ? { top: "16px" } : { top: "48px" }}
@@ -47,7 +60,6 @@ export default ({ loading, title, url, data }) => {
             link={`/blog/${post.slug}`}
           />
         ))}
-        {loading && [11, 58, 78].map(index => <BlogCardLoading key={index} />)}
       </ComponentSlider>
     </Box>
   )
