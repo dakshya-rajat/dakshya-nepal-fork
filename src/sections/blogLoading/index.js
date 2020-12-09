@@ -17,6 +17,7 @@ import Twitter from "../../components/icons/twitter"
 import Instagram from "../../components/icons/instagram"
 import Linkedin from "../../components/icons/linkedin"
 import SEO from "../../components/seo"
+import { Link } from "gatsby"
 
 const transform = {
   p: "p",
@@ -39,7 +40,9 @@ export const BlogLoaded = ({ blogData }) => {
     >
       <SEO title={blogData.title} />
       <Box gap="small" direction="row" pad={{ top: "32px" }}>
-        <ArrowLeft color="b1" />
+        <Link to="/blog">
+          <ArrowLeft color="b1" />
+        </Link>
         <Text code="sub-r" color="b2">
           {dayjs.unix(blogData._created).format("DD, MMMM, YYYY")}
         </Text>
