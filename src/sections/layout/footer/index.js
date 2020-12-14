@@ -63,7 +63,7 @@ export default props => {
         </Text>
         <Box direction="column" gap="small">
           <Text code="subtext-r" color="g1" size="small">
-            Legal . Paperwork . Advertisement
+            Digitized Content. School ERP. Website
           </Text>
           <Text code="subtext-r" color="g1" size="small">
             All rights reserved Dakshya Nepal 2020
