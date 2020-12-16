@@ -93,7 +93,7 @@ export default () => {
                   videoTitle={`class ${index + 1} ${data.sub} video`}
                 />
                 <Heading code={4}>{data.sub}</Heading>
-                <Text code="sub-r" color="b2">
+                <Text code="sub-r" color="b2" margin={{bottom:"24px"}}>
                   {data.description}
                 </Text>
               </Box>
