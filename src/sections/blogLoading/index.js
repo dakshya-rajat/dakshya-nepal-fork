@@ -40,14 +40,14 @@ export const BlogLoaded = ({ blogData }) => {
     >
       <SEO title={blogData.title} />
       <Box gap="small" direction="row" pad={{ top: "32px" }}>
-        <Link to="/blog">
+        {!mobile && <Link to="/blog">
           <ArrowLeft color="b1" />
-        </Link>
+        </Link>}
         <Text code="sub-r" color="b2">
-          {dayjs.unix(blogData._created).format("DD, MMMM, YYYY")}
+          {dayjs.unix(blogData._created).format("DD MMMM YYYY")}
         </Text>
-        <Text code="sub-r" color="b2" style={{ textTransform: "capitalize" }}>
-          {blogData.category || <Skeleton />}
+        <Text code="sub-r" color="b2">
+          @DakshyaNepal
         </Text>
         <Text code="sub-r" color="b2">
           {blogData.timeToRead} mins read
@@ -58,7 +58,7 @@ export const BlogLoaded = ({ blogData }) => {
       </Heading>
       <Box pad={{ bottom: "24px" }}>
         {Object.keys(blogData).length !== 0 ? (
-          <Image src={process.env.GATSBY_API_URL + blogData.coverImage.path} />
+          <Image src={process.env.GATSBY_API_URL + blogData.coverImage.path} fill="horizontal"/>
         ) : null}
       </Box>
       <Box gap="medium">
@@ -68,12 +68,23 @@ export const BlogLoaded = ({ blogData }) => {
             : null}
         </div>
       </Box>
+
+    <Box direction={mobile?"column":"row"} justify="between" gap={mobile?"small":"none"}>
+      <Box gap="small" direction="row">
+        <Text code="sub-r" color="b2">
+          {dayjs.unix(blogData._created).format("DD MMMM YYYY")}
+        </Text>
+        <Text code="sub-r" color="b2">
+          @DakshyaNepal
+        </Text>
+        <Text code="sub-r" color="b2">
+          {blogData.timeToRead} mins read
+        </Text>
+      </Box>
+
       <Box
-        flex="grow"
-        alignSelf="end"
         direction="row"
         gap="small"
-        pad={{ vertical: "medium" }}
       >
         <FacebookShareButton url={path}>
           <Facebook color="b1" />
@@ -87,6 +98,12 @@ export const BlogLoaded = ({ blogData }) => {
         <LinkedinShareButton url={path}>
           <Linkedin color="b1" />
         </LinkedinShareButton>
+      </Box>
+      </Box>
+      <Box>
+      <Text code="sub-r" color="b2" style={{ textTransform: "capitalize" }}>
+          #{blogData.category || <Skeleton />}
+        </Text>
       </Box>
     </Box>
   )

@@ -17,7 +17,7 @@ export default () => {
       <WorkFlowSection />
       <DemoVideos />
       <ContactSalesForm
-        title="Lets start learning with Study'n'Learn"
+        title="Let's start learning with Study'n'Learn"
         product={product}
         image="/illustrations/Girl on a chair.svg"
       />
